@@ -1,22 +1,5 @@
-CT GUARDAMAR - PROYECTO ANDROID
+GESTOR CT GUARDAMAR – PROYECTO DE DIAGNÓSTICO
 
-Este proyecto envuelve la versión HTML existente en una aplicación Android nativa basada en WebView.
-La aplicación abre la interfaz localmente, sin navegador ni conexión a Internet.
-Los datos se guardan en el almacenamiento local de la aplicación.
+Esta versión muestra un aviso rojo con el error y la línea si JavaScript falla. Sirve para localizar el origen de la pantalla en blanco; no es todavía una confirmación de que el problema esté corregido.
 
-COMPILACIÓN EN LA NUBE (sin instalar Android Studio en el PC):
-1. Crea una cuenta gratuita en GitHub si no tienes una.
-2. Crea un repositorio nuevo llamado CTGuardamar.
-3. Sube el CONTENIDO de esta carpeta al repositorio (no la carpeta ZIP como único archivo).
-4. En GitHub abre la pestaña Actions.
-5. Selecciona “Build CT Guardamar APK” y pulsa “Run workflow”.
-6. Cuando termine, abre la ejecución y descarga el artefacto “CT-Guardamar-APK”.
-7. Dentro encontrarás app-debug.apk. Pásalo a la tablet e instálalo.
-
-NOTAS:
-- minSdk 23: compatible con Android 11.
-- targetSdk 28 para facilitar instalación en dispositivos Android 11.
-- Esta primera compilación es de depuración (APK instalable, no versión publicada en Play Store).
-- La versión HTML ya incluye los nueve inscritos de la copia de seguridad de Navidad 2026 como datos iniciales.
-- Las categorías del torneo todavía están sin asignar; se pueden crear y asignar desde la aplicación.
-- Antes de desinstalar la app, exporta una copia de seguridad si has introducido datos.
+Sube el contenido del ZIP al repositorio CT-Guardamar y ejecuta el workflow Build APK. Instala el APK generado. Si aparece el aviso rojo, envía una fotografía legible. Si no aparece, indica si el panel central se muestra y si los menús responden.
