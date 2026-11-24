@@ -1,0 +1,55 @@
+name: Build CT Guardamar APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Prepare permanent signing key
+        env:
+          CTG_KEYSTORE_BASE64: ${{ secrets.CTG_KEYSTORE_BASE64 }}
+          CTG_KEYSTORE_PASSWORD: ${{ secrets.CTG_KEYSTORE_PASSWORD }}
+          CTG_KEY_ALIAS: ${{ secrets.CTG_KEY_ALIAS }}
+          CTG_KEY_PASSWORD: ${{ secrets.CTG_KEY_PASSWORD }}
+        run: |
+          set -eu
+          test -n "$CTG_KEYSTORE_BASE64" || { echo 'Falta configurar CTG_KEYSTORE_BASE64'; exit 1; }
+          test -n "$CTG_KEYSTORE_PASSWORD" || { echo 'Falta configurar CTG_KEYSTORE_PASSWORD'; exit 1; }
+          test -n "$CTG_KEY_ALIAS" || { echo 'Falta configurar CTG_KEY_ALIAS'; exit 1; }
+          test -n "$CTG_KEY_PASSWORD" || { echo 'Falta configurar CTG_KEY_PASSWORD'; exit 1; }
+          echo "$CTG_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/ctguardamar-release.jks"
+          echo "CTG_KEYSTORE_FILE=$RUNNER_TEMP/ctguardamar-release.jks" >> "$GITHUB_ENV"
+
+      - name: Build signed release APK
+        env:
+          CTG_KEYSTORE_PASSWORD: ${{ secrets.CTG_KEYSTORE_PASSWORD }}
+          CTG_KEY_ALIAS: ${{ secrets.CTG_KEY_ALIAS }}
+          CTG_KEY_PASSWORD: ${{ secrets.CTG_KEY_PASSWORD }}
+        run: gradle assembleRelease
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: CT-Guardamar-APK-firma-estable
+          path: app/build/outputs/apk/release/app-release.apk
