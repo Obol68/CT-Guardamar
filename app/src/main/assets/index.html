@@ -3,16 +3,79 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#123d68"><title>Gestor de Torneos · CT Guardamar</title>
 <style>
-:root{--navy:#123d68;--blue:#1d5b91;--gold:#e3b64f;--bg:#f3f6fa;--ink:#172638;--muted:#64748b;--line:#dbe3ec;--white:#fff;--green:#177245;--red:#a93434;--shadow:0 3px 14px #193b5b12}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;touch-action:manipulation}.app-header{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:18px max(16px,env(safe-area-inset-left));display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:24px;font-weight:900}.brand h1{font-size:clamp(19px,3vw,27px);line-height:1.15;margin:0}.brand p{margin:4px 0 0;color:#dce9f6;font-size:13px}.header-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:11px 15px;font-weight:700;background:var(--navy);color:#fff;min-height:44px}.btn.secondary{background:#e9eff6;color:var(--navy)}.btn.gold{background:var(--gold);color:#182a3d}.btn.danger{background:#fbe9e9;color:var(--red)}.btn.small{padding:7px 10px;min-height:36px;font-size:14px}.layout{display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1500px;margin:auto;min-height:calc(100vh - 84px)}.sidebar{padding:18px 12px;background:#fff;border-right:1px solid var(--line)}.nav{display:grid;gap:6px;position:sticky;top:10px}.nav button{display:flex;gap:11px;align-items:center;text-align:left;border:0;background:transparent;color:#405168;padding:13px;border-radius:10px;min-height:48px;font-weight:650}.nav button.active,.nav button:hover{background:#eaf1f8;color:var(--navy)}.nav .ico{width:24px;text-align:center;font-size:19px}.main{padding:22px;min-width:0}.page-title{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.page-title h2{margin:0;font-size:clamp(22px,3vw,29px)}.page-title p{margin:5px 0 0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px;box-shadow:var(--shadow);min-width:0}.card h3{margin:0 0 12px;font-size:18px}.metric{font-size:30px;font-weight:800;color:var(--navy)}.muted{color:var(--muted)}.smalltext{font-size:13px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.stack{display:grid;gap:12px}.field{display:grid;gap:5px;min-width:0}.field label{font-weight:700;font-size:14px;color:#34465c}.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:11px 12px;background:#fff;color:var(--ink);min-height:44px}.field select[multiple]{min-height:125px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.form-grid .full{grid-column:1/-1}.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.toolbar input,.toolbar select{padding:10px;border:1px solid var(--line);border-radius:9px;min-height:42px;background:#fff}.list{display:grid;gap:10px}.item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:11px;background:#fff}.item-main{min-width:0}.item-main strong{display:block;overflow-wrap:anywhere}.item-main p{margin:3px 0 0;color:var(--muted);font-size:13px}.item-actions{display:flex;gap:6px;flex-wrap:wrap}.tag{display:inline-block;padding:4px 8px;border-radius:20px;background:#edf3f8;color:var(--navy);font-size:12px;font-weight:700}.empty{text-align:center;padding:30px 16px;border:1px dashed #b9c7d6;border-radius:12px;color:var(--muted);background:#ffffff9c}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:11px;background:#fff}table{border-collapse:collapse;width:100%;min-width:620px}th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#edf3f8;color:#31475e;font-size:13px}tr:last-child td{border-bottom:0}.score-input{width:62px;min-height:40px;border:1px solid #cbd5e1;border-radius:8px;text-align:center;padding:6px}.match{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center;padding:13px;background:#fff;border:1px solid var(--line);border-radius:12px}.player-side{min-width:0}.player-side:last-child{text-align:right}.player-side strong{overflow-wrap:anywhere}.vs{font-size:12px;color:var(--muted);font-weight:800}.match-meta{grid-column:1/-1;display:flex;gap:9px;align-items:center;flex-wrap:wrap;border-top:1px solid #edf1f5;padding-top:9px}.match-meta label{font-size:12px;color:var(--muted);display:flex;gap:5px;align-items:center}.match-meta input,.match-meta select{max-width:160px;min-width:90px;padding:7px;border:1px solid var(--line);border-radius:7px}.status{font-size:12px;font-weight:750;border-radius:20px;padding:4px 8px;background:#fff2d4;color:#865a00}.status.done{background:#e4f5eb;color:var(--green)}.bracket{display:flex;gap:14px;overflow:auto;padding:8px 2px 18px;align-items:stretch}.round-col{min-width:220px;max-width:260px;flex:0 0 240px;display:flex;flex-direction:column;gap:12px}.round-col h4{margin:0;color:var(--navy)}.bracket-match{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px;font-size:14px}.bracket-match div{padding:5px 0}.bracket-match div+div{border-top:1px solid #edf1f5}.bracket-match .winner{font-weight:800;color:var(--green)}.notice{padding:12px 14px;background:#fff8e5;border:1px solid #f0d68b;border-radius:10px;color:#70551c;font-size:14px}.footer{padding:20px;text-align:center;color:var(--muted);font-size:12px}.hidden{display:none!important}.mobile-nav{display:none}.backup-note{font-size:13px;color:var(--muted);line-height:1.6}.divider{height:1px;background:var(--line);margin:12px 0}dialog{border:0;border-radius:16px;width:min(620px,calc(100% - 24px));padding:0;box-shadow:0 20px 80px #10243d55;max-height:90vh}dialog::backdrop{background:#0b1c2e88}.modal-head{padding:17px 20px;background:#edf3f8;display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0}.modal-body{padding:20px;overflow:auto;max-height:72vh}.modal-foot{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:8px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#183c5e;color:#fff;padding:12px 18px;border-radius:10px;box-shadow:var(--shadow);z-index:20;max-width:90%;text-align:center}.pill-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.pill-tabs button{border:1px solid var(--line);border-radius:30px;padding:8px 13px;background:#fff;color:var(--ink)}.pill-tabs button.active{background:var(--navy);color:#fff}.court-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.court{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}.court strong{display:block;color:var(--navy)}
-@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{display:none}.main{padding:14px 12px 88px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom));z-index:10;justify-content:space-around;gap:2px}.mobile-nav button{border:0;background:transparent;color:#506177;display:grid;justify-items:center;gap:2px;padding:5px 4px;font-size:10px;min-width:0;flex:1}.mobile-nav button.active{color:var(--navy);font-weight:800}.mobile-nav span{font-size:19px}.header-actions .btn{padding:9px 10px;font-size:13px}.app-header{padding:13px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.court-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+:root{--navy:#123d68;--blue:#1d5b91;--gold:#e3b64f;--bg:#f3f6fa;--ink:#172638;--muted:#64748b;--line:#dbe3ec;--white:#fff;--green:#177245;--red:#a93434;--shadow:0 3px 14px #193b5b12}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;touch-action:manipulation}.app-header{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;padding:18px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:24px;font-weight:900}.brand h1{font-size:23px;line-height:1.15;margin:0}.brand p{margin:4px 0 0;color:#dce9f6;font-size:13px}.header-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:11px 15px;font-weight:700;background:var(--navy);color:#fff;min-height:44px}.btn.secondary{background:#e9eff6;color:var(--navy)}.btn.gold{background:var(--gold);color:#182a3d}.btn.danger{background:#fbe9e9;color:var(--red)}.btn.small{padding:7px 10px;min-height:36px;font-size:14px}.layout{display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1500px;margin:auto;min-height:calc(100vh - 84px)}.sidebar{padding:18px 12px;background:#fff;border-right:1px solid var(--line)}.nav{display:grid;gap:6px;position:sticky;top:10px}.nav button{display:flex;gap:11px;align-items:center;text-align:left;border:0;background:transparent;color:#405168;padding:13px;border-radius:10px;min-height:48px;font-weight:650}.nav button.active,.nav button:hover{background:#eaf1f8;color:var(--navy)}.nav .ico{width:24px;text-align:center;font-size:19px}.main{padding:22px;min-width:0}.page-title{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.page-title h2{margin:0;font-size:26px}.page-title p{margin:5px 0 0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px;box-shadow:var(--shadow);min-width:0}.card h3{margin:0 0 12px;font-size:18px}.metric{font-size:30px;font-weight:800;color:var(--navy)}.muted{color:var(--muted)}.smalltext{font-size:13px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.stack{display:grid;gap:12px}.field{display:grid;gap:5px;min-width:0}.field label{font-weight:700;font-size:14px;color:#34465c}.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:11px 12px;background:#fff;color:var(--ink);min-height:44px}.field select[multiple]{min-height:125px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.form-grid .full{grid-column:1/-1}.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.toolbar input,.toolbar select{padding:10px;border:1px solid var(--line);border-radius:9px;min-height:42px;background:#fff}.list{display:grid;gap:10px}.item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:11px;background:#fff}.item-main{min-width:0}.item-main strong{display:block;overflow-wrap:anywhere}.item-main p{margin:3px 0 0;color:var(--muted);font-size:13px}.item-actions{display:flex;gap:6px;flex-wrap:wrap}.tag{display:inline-block;padding:4px 8px;border-radius:20px;background:#edf3f8;color:var(--navy);font-size:12px;font-weight:700}.empty{text-align:center;padding:30px 16px;border:1px dashed #b9c7d6;border-radius:12px;color:var(--muted);background:#ffffff9c}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:11px;background:#fff}table{border-collapse:collapse;width:100%;min-width:620px}th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#edf3f8;color:#31475e;font-size:13px}tr:last-child td{border-bottom:0}.score-input{width:62px;min-height:40px;border:1px solid #cbd5e1;border-radius:8px;text-align:center;padding:6px}.match{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center;padding:13px;background:#fff;border:1px solid var(--line);border-radius:12px}.player-side{min-width:0}.player-side:last-child{text-align:right}.player-side strong{overflow-wrap:anywhere}.vs{font-size:12px;color:var(--muted);font-weight:800}.match-meta{grid-column:1/-1;display:flex;gap:9px;align-items:center;flex-wrap:wrap;border-top:1px solid #edf1f5;padding-top:9px}.match-meta label{font-size:12px;color:var(--muted);display:flex;gap:5px;align-items:center}.match-meta input,.match-meta select{max-width:160px;min-width:90px;padding:7px;border:1px solid var(--line);border-radius:7px}.status{font-size:12px;font-weight:750;border-radius:20px;padding:4px 8px;background:#fff2d4;color:#865a00}.status.done{background:#e4f5eb;color:var(--green)}.bracket{display:flex;gap:14px;overflow:auto;padding:8px 2px 18px;align-items:stretch}.round-col{min-width:220px;max-width:260px;flex:0 0 240px;display:flex;flex-direction:column;gap:12px}.round-col h4{margin:0;color:var(--navy)}.bracket-match{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px;font-size:14px}.bracket-match div{padding:5px 0}.bracket-match div+div{border-top:1px solid #edf1f5}.bracket-match .winner{font-weight:800;color:var(--green)}.notice{padding:12px 14px;background:#fff8e5;border:1px solid #f0d68b;border-radius:10px;color:#70551c;font-size:14px}.footer{padding:20px;text-align:center;color:var(--muted);font-size:12px}.hidden{display:none!important}.mobile-nav{display:none}.backup-note{font-size:13px;color:var(--muted);line-height:1.6}.divider{height:1px;background:var(--line);margin:12px 0}dialog{border:0;border-radius:16px;width:calc(100% - 24px);padding:0;box-shadow:0 20px 80px #10243d55;max-height:90vh}dialog::backdrop{background:#0b1c2e88}.modal-head{padding:17px 20px;background:#edf3f8;display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0}.modal-body{padding:20px;overflow:auto;max-height:72vh}.modal-foot{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:8px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#183c5e;color:#fff;padding:12px 18px;border-radius:10px;box-shadow:var(--shadow);z-index:20;max-width:90%;text-align:center}.pill-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.pill-tabs button{border:1px solid var(--line);border-radius:30px;padding:8px 13px;background:#fff;color:var(--ink)}.pill-tabs button.active{background:var(--navy);color:#fff}.court-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.court{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}.court strong{display:block;color:var(--navy)}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{display:none}.main{padding:14px 12px 88px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:6px 4px 6px;z-index:10;justify-content:space-around;gap:2px}.mobile-nav button{border:0;background:transparent;color:#506177;display:grid;justify-items:center;gap:2px;padding:5px 4px;font-size:10px;min-width:0;flex:1}.mobile-nav button.active{color:var(--navy);font-weight:800}.mobile-nav span{font-size:19px}.header-actions .btn{padding:9px 10px;font-size:13px}.app-header{padding:13px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.court-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:440px){.grid{grid-template-columns:1fr 1fr;gap:8px}.card{padding:12px}.metric{font-size:25px}.item{align-items:flex-start;flex-direction:column}.item-actions{width:100%}.match{gap:7px;padding:10px}.player-side strong{font-size:13px}.match-meta input,.match-meta select{max-width:125px}.brand p{font-size:12px}.logo{width:40px;height:40px}}
 </style></head>
 <body>
 <header class="app-header"><div class="brand"><div class="logo">CT</div><div><h1>Gestor de Torneos</h1><p>Club Tenis Guardamar · Herramienta gratuita</p></div></div><div class="header-actions"><button class="btn gold" id="quickNew">＋ Nuevo torneo</button><button class="btn secondary" id="headerBackup">⇩ Copia de seguridad</button></div></header>
-<div class="layout"><aside class="sidebar"><nav class="nav" id="sideNav"><button data-page="dashboard" class="active"><span class="ico">▦</span>Resumen</button><button data-page="tournaments"><span class="ico">🏆</span>Torneos</button><button data-page="players"><span class="ico">♟</span>Jugadores</button><button data-page="calendar"><span class="ico">▦</span>Jornadas y pistas</button><button data-page="matches"><span class="ico">🎾</span>Partidos y resultados</button><button data-page="standings"><span class="ico">☷</span>Clasificaciones</button><button data-page="backup"><span class="ico">⇅</span>Copias de seguridad</button></nav></aside><main class="main" id="main"></main></div>
+<div class="layout"><aside class="sidebar"><nav class="nav" id="sideNav"><button data-page="dashboard" class="active"><span class="ico">▦</span>Resumen</button><button data-page="tournaments"><span class="ico">🏆</span>Torneos</button><button data-page="players"><span class="ico">♟</span>Jugadores</button><button data-page="calendar"><span class="ico">▦</span>Jornadas y pistas</button><button data-page="matches"><span class="ico">🎾</span>Partidos y resultados</button><button data-page="standings"><span class="ico">☷</span>Clasificaciones</button><button data-page="backup"><span class="ico">⇅</span>Copias de seguridad</button></nav></aside><main class="main" id="main"><div class="notice">Iniciando CT Guardamar Torneos…</div></main></div>
 <nav class="mobile-nav" id="mobileNav"><button data-page="dashboard" class="active"><span>▦</span>Resumen</button><button data-page="tournaments"><span>🏆</span>Torneos</button><button data-page="players"><span>♟</span>Jugadores</button><button data-page="calendar"><span>📅</span>Jornadas</button><button data-page="matches"><span>🎾</span>Partidos</button><button data-page="standings"><span>☷</span>Tabla</button><button data-page="backup"><span>⇅</span>Copia</button></nav>
 <dialog id="modal"><div class="modal-head"><h3 id="modalTitle">Formulario</h3><button class="btn secondary small" id="modalX" type="button">Cerrar ✕</button></div><form id="modalForm"><div class="modal-body" id="modalBody"></div><div class="modal-foot"><button type="button" class="btn secondary" id="modalCancel">Cancelar</button><button type="submit" class="btn" id="modalSave">Guardar</button></div></form></dialog><div id="toast" class="toast hidden" role="status"></div><input type="file" id="importFile" accept=".json,application/json" class="hidden">
 <script>
+
+// Compatibilidad con WebView antiguos (Android 11 y versiones previas).
+(function () {
+  if (!Array.prototype.flat) {
+    Array.prototype.flat = function (depth) {
+      var d = depth == null ? 1 : Number(depth), out = [];
+      function add(a, level) {
+        for (var i = 0; i < a.length; i++) {
+          var v = a[i];
+          if (Array.isArray(v) && level > 0) add(v, level - 1);
+          else out.push(v);
+        }
+      }
+      add(this, d); return out;
+    };
+  }
+  if (!Array.prototype.flatMap) {
+    Array.prototype.flatMap = function (callback, thisArg) {
+      var out = [];
+      for (var i = 0; i < this.length; i++) {
+        if (i in this) {
+          var value = callback.call(thisArg, this[i], i, this);
+          if (Array.isArray(value)) {
+            for (var j = 0; j < value.length; j++) out.push(value[j]);
+          } else out.push(value);
+        }
+      }
+      return out;
+    };
+  }
+  if (!Object.fromEntries) {
+    Object.fromEntries = function (entries) {
+      var result = {};
+      for (var i = 0; i < entries.length; i++) {
+        var pair = entries[i];
+        if (pair && pair.length >= 2) result[pair[0]] = pair[1];
+      }
+      return result;
+    };
+  }
+  if (!String.prototype.padStart) {
+    String.prototype.padStart = function (targetLength, padString) {
+      var str = String(this), pad = padString === undefined ? ' ' : String(padString);
+      targetLength = Number(targetLength) || 0;
+      while (str.length < targetLength) str = pad + str;
+      return str.slice(str.length - targetLength);
+    };
+  }
+  if (!String.prototype.matchAll) {
+    String.prototype.matchAll = function (regexp) {
+      if (!(regexp instanceof RegExp) || !regexp.global) throw new TypeError('matchAll necesita una expresión regular global');
+      var source = new RegExp(regexp.source, regexp.flags || 'g'), results = [], match;
+      source.lastIndex = regexp.lastIndex || 0;
+      while ((match = source.exec(String(this))) !== null) {
+        results.push(match);
+        if (match[0] === '') source.lastIndex++;
+      }
+      return results;
+    };
+  }
+})();
+
+
 // Diagnóstico visible de errores JavaScript durante el inicio y el uso.
 (function(){
   function report(message, filename, line) {
@@ -32,162 +95,706 @@
   window.addEventListener('unhandledrejection', function(e){
     var r=e.reason; report(r && r.message ? r.message : String(r), '', 0);
   });
+  // Si el inicio no llega a dibujar el panel, mostrar una indicación visible.
+  setTimeout(function(){
+    var main = document.getElementById('main');
+    if (main && main.textContent.indexOf('Iniciando CT Guardamar') !== -1) {
+      report('La aplicación no ha podido iniciar su pantalla. Envía una foto de este aviso.', '', 0);
+    }
+  }, 5000);
 })();
-</script>
-(()=>{'use strict';
-const KEY='ct_guardamar_tournament_manager_v1';const $=s=>document.querySelector(s);const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const today=()=>new Date().toISOString().slice(0,10);const fmtDate=s=>s?new Date(s+'T12:00:00').toLocaleDateString('es-ES'):'Sin fecha';let page='dashboard',search='',toastTimer;let selectedCategory=null;
-function fresh(){return {version:1,players:[],tournaments:[],activeTournament:null}}
-const INITIAL_BACKUP={"version":1,"players":[{"name":"Alisa Tovchyhrechko/Oleksandra Znova","club":"","phone":"605739408","email":"aliceandreenko@gmail.com","id":"mwum8qwhmcy8kl","availability":""},{"name":"Alexander Solovtsov/Egor Lazarev","club":"","phone":"653729636","email":"alex@topdec.ru","id":"mwumbbqkoic1mj","availability":""},{"name":"Gaidash Ievgenii/Dmytro Moiseienko","club":"","phone":"+380675095813","email":"gov2015@ukr.net","id":"mwumevrstotbzf","availability":""},{"name":"Sofía Bonmati/Olivia Pina","club":"","phone":"685607782","email":"pinagaleote@hotmail.com","id":"mwumho7sjmfp4c","availability":""},{"name":"Volodymyr Husiev/Alexander Bandin","club":"","phone":"+34675179107","email":"gusevvolodumyr12@gmail.com","id":"mwumlpqg2lcksl","availability":""},{"name":"Tymoteusz Lejchter/Héctor Follana","club":"","phone":"624041704","email":"lejchterkarolina@gmail.com","id":"mwumonc81gb9i2","availability":""},{"name":"Dmitry Frolov/Aleksey Dvoretskiy","club":"","phone":"611218585","email":"ssav1318@gmail.com","id":"mwumrhwl6jxtng","availability":""},{"name":"Yelizaveta Pilhalieva/Tetina Stepanenko","club":"","phone":"625552675","email":"elizabeth.pigaleva@gmail.com","id":"mwumxyiiude81y","availability":""},{"name":"Ishan Rico/Silvio Rico","club":"","phone":"663879804","email":"","id":"mwumzqj2m566ec","availability":""}],"tournaments":[{"name":"Torneo de Navidad 2026","startDate":"2026-12-18","endDate":"2026-12-20","location":"Polideportivo Municipal de Guardamar","courts":4,"notes":"","id":"mwum3tvpe711ht","categories":[]}],"activeTournament":"mwum3tvpe711ht","exportedAt":"2026-11-24T12:04:23.057Z"};
-let state=load();
-function load(){
- try{
-  const raw=localStorage.getItem(KEY);
-  if(raw){const s=JSON.parse(raw);if(s&&Array.isArray(s.players)&&Array.isArray(s.tournaments))return s;}
- }catch(e){}
- // La copia facilitada se carga únicamente si este navegador todavía no tiene datos.
- const initial=JSON.parse(JSON.stringify(INITIAL_BACKUP));
- initial.tournaments=initial.tournaments.map(t=>({...t,categories:Array.isArray(t.categories)?t.categories:[]}));
- return initial;
-}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state));return true}catch(e){notify('No se pudo guardar. Exporta una copia y libera espacio del navegador.');return false}}
-function notify(t){const el=$('#toast');el.textContent=t;el.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.add('hidden'),3000)}
-function activeT(){return state.tournaments.find(t=>t.id===state.activeTournament)||state.tournaments[0]||null}function setActive(id){state.activeTournament=id;save()}
-function allMatches(t=activeT()){return t?t.categories.flatMap(c=>c.matches.map(m=>({...m,categoryId:c.id,categoryName:c.name,tournamentId:t.id}))):[]}
-function playerName(id){return state.players.find(p=>p.id===id)?.name||'Jugador pendiente'}function categoryById(t,id){return t?.categories.find(c=>c.id===id)}function matchStatus(m){return m.status==='done'||(m.scoreA!==''&&m.scoreB!==''&&m.scoreA!=null&&m.scoreB!=null)}
-function nav(p){page=p;document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render()}
-function pageHead(title,sub,button=''){return `<div class="page-title"><div><h2>${title}</h2><p>${sub||''}</p></div>${button}</div>`}
-function empty(msg,button=''){return `<div class="empty"><div style="font-size:30px;margin-bottom:8px">🎾</div><strong>${msg}</strong><p class="smalltext">Los datos se guardan en este dispositivo.</p>${button}</div>`}
-function tSelect(){return `<div class="field"><label for="activeTSelect">Torneo activo</label><select id="activeTSelect">${state.tournaments.length?state.tournaments.map(t=>`<option value="${t.id}" ${t.id===activeT()?.id?'selected':''}>${esc(t.name)}</option>`).join(''):'<option value="">Crea un torneo para empezar</option>'}</select></div>`}
-function render(){const main=$('#main');try{state.players=Array.isArray(state.players)?state.players:[];state.tournaments=Array.isArray(state.tournaments)?state.tournaments:[];state.tournaments.forEach(t=>{t.categories=Array.isArray(t.categories)?t.categories:[];t.categories.forEach(c=>{c.playerIds=Array.isArray(c.playerIds)?c.playerIds:[];c.matches=Array.isArray(c.matches)?c.matches:[];c.groups=Array.isArray(c.groups)?c.groups:[]})});switch(page){case'dashboard':main.innerHTML=dashboard();break;case'tournaments':main.innerHTML=tournamentsPage();break;case'players':main.innerHTML=playersPage();break;case'calendar':main.innerHTML=calendarPage();break;case'matches':main.innerHTML=matchesPage();break;case'standings':main.innerHTML=standingsPage();break;case'backup':main.innerHTML=backupPage();break;default:main.innerHTML=dashboard()}bindMain()}catch(err){console.error('Error al mostrar la pantalla',err);main.innerHTML='<div class="notice"><b>No se ha podido mostrar esta sección.</b><p>'+esc(err&&err.message?err.message:String(err))+'</p><button class="btn secondary" onclick="location.reload()">Volver a cargar</button></div>'}}
-function dashboard(){const t=activeT(),matches=allMatches(t),played=matches.filter(matchStatus).length,players=state.players.length;return pageHead('Resumen','Panel de control del Club Tenis Guardamar',`<button class="btn" data-action="new-tournament">＋ Crear torneo</button>`)+(t?`<div class="card" style="margin-bottom:14px"><div class="form-grid"><div>${tSelect()}</div><div><label class="field"><span>Periodo</span><strong>${fmtDate(t.startDate)}${t.endDate?' – '+fmtDate(t.endDate):''}</strong></label></div></div><div class="row" style="margin-top:10px"><span class="tag">${esc(t.location||'Sin ubicación')}</span><span class="tag">${t.courts||1} pistas</span><button class="btn secondary small" data-action="edit-tournament" data-id="${t.id}">Editar torneo</button><button class="btn secondary small" data-action="new-category">＋ Categoría</button></div></div>`:empty('Todavía no tienes torneos creados.','<button class="btn" data-action="new-tournament">Crear mi primer torneo</button><p style="margin-top:12px"><button class="btn gold" data-action="assign-pair-categories">Asignar categorías a las parejas</button></p>'))+(t?`<div class="grid"><div class="card"><div class="muted smalltext">Parejas inscritas</div><div class="metric">${players}</div></div><div class="card"><div class="muted smalltext">Partidos programados</div><div class="metric">${matches.length}</div></div><div class="card"><div class="muted smalltext">Partidos terminados</div><div class="metric">${played}</div><div class="smalltext muted">${matches.length?Math.round(played/matches.length*100):0}% completado</div></div></div><div class="grid" style="margin-top:14px"><div class="card"><h3>Accesos rápidos</h3><div class="stack"><button class="btn gold" data-action="assign-pair-categories">Asignar categorías a las parejas</button><button class="btn secondary" data-action="new-player">＋ Añadir jugador</button><button class="btn secondary" data-action="new-category">＋ Crear categoría</button><button class="btn secondary" data-page="matches">Introducir resultados</button><button class="btn secondary" data-page="standings">Ver clasificaciones</button></div></div><div class="card" style="grid-column:span 2"><h3>Próximos partidos</h3>${matches.filter(m=>!matchStatus(m)).sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999')||(a.time||'').localeCompare(b.time||'')).slice(0,5).map(m=>`<div class="item"><div class="item-main"><strong>${esc(playerName(m.playerA))} — ${esc(playerName(m.playerB))}</strong><p>${esc(m.categoryName)} · ${fmtDate(m.date)} ${esc(m.time||'')} · ${esc(m.court||'Pista sin asignar')}${m.scheduleWarning?' · ⚠ '+esc(m.scheduleWarning):''}</p></div><button class="btn small" data-action="edit-match" data-cat="${m.categoryId}" data-id="${m.id}">Resultado</button></div>`).join('')||'<p class="muted">No hay partidos pendientes.</p>'}</div></div>`:'')+`<p class="footer">CT Guardamar · Los datos se almacenan en este navegador. Haz copias de seguridad periódicas.</p>`}
-function tournamentsPage(){return pageHead('Torneos','Crea y administra las competiciones.',`<button class="btn" data-action="new-tournament">＋ Nuevo torneo</button>`)+(state.tournaments.length?`<div class="list">${state.tournaments.map(t=>`<div class="item"><div class="item-main"><strong>${esc(t.name)} ${t.id===activeT()?.id?'<span class="tag">Activo</span>':''}</strong><p>${fmtDate(t.startDate)}${t.endDate?' – '+fmtDate(t.endDate):''} · ${t.categories.length} categorías · ${t.courts||1} pistas</p><p>${esc(t.location||'Sin ubicación')} ${t.notes?'· '+esc(t.notes):''}</p></div><div class="item-actions"><button class="btn small" data-action="activate-tournament" data-id="${t.id}">Abrir</button><button class="btn secondary small" data-action="edit-tournament" data-id="${t.id}">Editar</button><button class="btn danger small" data-action="delete-tournament" data-id="${t.id}">Eliminar</button></div></div>`).join('')}</div>`:empty('No hay torneos creados.','<button class="btn" data-action="new-tournament">Crear torneo</button>'))}
-function playersPage(){const q=search.toLowerCase();const ps=state.players.filter(p=>p.name.toLowerCase().includes(q)||(p.club||'').toLowerCase().includes(q)||(p.category||'').toLowerCase().includes(q));return pageHead('Parejas inscritas','Asigna cada pareja a su categoría desde el menú desplegable.',`<div class="row"><button class="btn gold" data-action="assign-pair-categories">Asignar categorías</button><button class="btn" data-action="new-player">＋ Añadir pareja</button></div>`)+`<div class="toolbar"><input id="playerSearch" placeholder="Buscar jugador o club…" value="${esc(search)}"><span class="tag">${ps.length} jugadores</span></div>`+(ps.length?`<div class="list">${ps.map(p=>`<div class="item"><div class="item-main"><strong>${esc(p.name)}</strong><p><b>${esc(p.category||'Sin categoría')}</b> · ${esc(p.club||'Sin club')} ${p.phone?'· '+esc(p.phone):''} ${p.email?'· '+esc(p.email):''}</p></div><div class="item-actions"><button class="btn secondary small" data-action="edit-player" data-id="${p.id}">Editar</button><button class="btn danger small" data-action="delete-player" data-id="${p.id}">Eliminar</button></div></div>`).join('')}</div>`:empty(state.players.length?'No hay coincidencias.':'Aún no has registrado jugadores.','<button class="btn" data-action="new-player">Añadir jugador</button>'))}
-function tournamentsOptions(){return state.tournaments.map(t=>`<option value="${t.id}" ${t.id===activeT()?.id?'selected':''}>${esc(t.name)}</option>`).join('')}
-function categoryOptions(t){return (t?.categories||[]).map(c=>`<option value="${c.id}" ${selectedCategory===c.id?'selected':''}>${esc(c.name)}</option>`).join('')}
-function categoryFilter(){const t=activeT();return `<div class="field"><label>Categoría</label><select id="categoryFilter"><option value="all">Todas las categorías</option>${categoryOptions(t)}</select></div>`}
-function calendarPage(){const t=activeT();if(!t)return pageHead('Jornadas y pistas','Organiza el calendario.')+empty('Primero crea un torneo.','<button class="btn" data-action="new-tournament">Crear torneo</button>');const ms=allMatches(t).sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999')||(a.time||'').localeCompare(b.time||''));return pageHead('Jornadas y pistas','El calendario automático reserva bloques de 90 minutos y reparte los encuentros entre las pistas.',`<button class="btn" data-action="generate-matches">⚙ Generar competición y horarios</button>`)+`<div class="card" style="margin-bottom:14px"><div class="row between"><h3>Resumen de pistas</h3><span class="tag">${t.courts||1} pistas configuradas</span></div><div class="court-grid">${Array.from({length:Math.max(1,Math.min(24,Number(t.courts)||1))},(_,i)=>{const name='Pista '+(i+1),n=ms.filter(m=>m.court===name&&!matchStatus(m)).length;return `<div class="court"><strong>🎾 ${name}</strong><span class="muted smalltext">${n} partidos pendientes</span></div>`}).join('')}</div></div><div class="toolbar"><input type="date" id="calendarDate"><select id="calendarCourt"><option value="">Todas las pistas</option>${Array.from({length:Math.max(1,Math.min(24,Number(t.courts)||1))},(_,i)=>`<option>Pista ${i+1}</option>`).join('')}</select></div><div id="calendarList" class="list">${ms.length?ms.map(m=>matchCard(m)).join(''):empty('No hay partidos programados.','<button class="btn" data-action="new-match">Programar partido</button>')}</div>`}
-function matchesPage(){const t=activeT();if(!t)return pageHead('Partidos y resultados','Introduce los marcadores.')+empty('Primero crea un torneo.','<button class="btn" data-action="new-tournament">Crear torneo</button>');return pageHead('Partidos y resultados','Programa encuentros e introduce los marcadores.',`<button class="btn" data-action="new-match">＋ Nuevo partido</button>`)+`<div class="toolbar">${categoryFilter()}<select id="matchStatusFilter"><option value="all">Todos los estados</option><option value="pending">Pendientes</option><option value="done">Terminados</option></select><input id="matchSearch" placeholder="Buscar jugador…"></div><div id="matchesList" class="list">${allMatches(t).map(m=>matchCard(m)).join('')||empty('No hay partidos. Añade una categoría y genera o programa partidos.')}</div>${t.categories.filter(c=>c.format==='knockout').map(c=>bracketView(c)).join('')}`}
-function bracketView(c){const rounds=[...new Set(c.matches.map(m=>m.round||'Ronda'))];if(!rounds.length)return '';const last=rounds[rounds.length-1],lastMatches=c.matches.filter(m=>(m.round||'Ronda')===last),ready=lastMatches.length>0&&lastMatches.every(matchStatus);const hasNext=lastMatches.length===1&&lastMatches[0].playerB&&matchStatus(lastMatches[0]);return `<div class="card" style="margin-top:16px"><div class="row between"><h3>Cuadro eliminatorio · ${esc(c.name)}</h3>${ready&&!hasNext?`<button class="btn" data-action="advance-round" data-cat="${c.id}">Generar siguiente ronda</button>`:''}</div><div class="bracket">${rounds.map(r=>`<div class="round-col"><h4>${esc(r)}</h4>${c.matches.filter(m=>(m.round||'Ronda')===r).map(m=>{const a=Number(m.scoreA),b=Number(m.scoreB),winner=matchStatus(m)?(m.playerB===''?m.playerA:(a>b?m.playerA:b>a?m.playerB:null)):null;return `<div class="bracket-match"><div class="${winner===m.playerA?'winner':''}">${esc(playerName(m.playerA))}${m.playerB===''?' · Exento':''}${matchStatus(m)&&m.playerB!==''?' · '+esc(m.scoreA):''}</div>${m.playerB!==''?`<div class="${winner===m.playerB?'winner':''}">${esc(playerName(m.playerB))}${matchStatus(m)?' · '+esc(m.scoreB):''}</div>`:''}</div>`}).join('')}</div>`).join('')}</div>${ready&&lastMatches.length===1&&!hasNext?'<p class="smalltext muted">La categoría ya tiene un ganador.</p>':''}</div>`}
-function advanceRound(catId){const c=categoryById(activeT(),catId);if(!c)return;const rounds=[...new Set(c.matches.map(m=>m.round||'Ronda'))],last=rounds[rounds.length-1],ms=c.matches.filter(m=>(m.round||'Ronda')===last);if(!ms.length||!ms.every(matchStatus)){notify('Completa todos los partidos de esta ronda antes de avanzar.');return}if(ms.length===1&&ms[0].playerB){notify('La categoría ya tiene un ganador.');return}const winners=ms.map(m=>{if(!m.playerB)return m.playerA;return Number(m.scoreA)>Number(m.scoreB)?m.playerA:Number(m.scoreB)>Number(m.scoreA)?m.playerB:null}).filter(Boolean);if(winners.length<=1){notify('El cuadro ya ha terminado.');return}const n=rounds.length+1,label=winners.length===2?'Final':winners.length===4?'Semifinales':winners.length===8?'Cuartos de final':'Ronda '+n;for(let i=0;i<winners.length;i+=2){if(winners[i+1])c.matches.push({id:uid(),playerA:winners[i],playerB:winners[i+1],round:label,date:'',time:'',court:'',scoreA:'',scoreB:'',status:'pending'});else c.matches.push({id:uid(),playerA:winners[i],playerB:'',round:label,date:'',time:'',court:'',scoreA:'1',scoreB:'0',status:'done'})}save();render();notify('Siguiente ronda generada.')}
-function matchCard(m){return `<div class="match" data-match-row="${m.id}" data-category="${m.categoryId}" data-status="${matchStatus(m)?'done':'pending'}" data-names="${esc((playerName(m.playerA)+' '+playerName(m.playerB)+' '+m.categoryName).toLowerCase())}"><div class="player-side"><strong>${esc(playerName(m.playerA))}</strong><div class="muted smalltext">${esc(m.playerA||'')}</div></div><div class="vs">${matchStatus(m)?`${esc(m.scoreA)} : ${esc(m.scoreB)}`:'VS'}</div><div class="player-side"><strong>${esc(playerName(m.playerB))}</strong><div class="muted smalltext">${esc(m.playerB||'')}</div></div><div class="match-meta"><span class="tag">${esc(m.categoryName)}</span>${m.groupName?`<span class="tag">${esc(m.groupName)}</span>`:''}<span class="tag">⏱ ${Number(m.duration)||90} min</span><label>Fecha <input type="date" data-match-field="date" data-id="${m.id}" data-cat="${m.categoryId}" value="${esc(m.date||'')}"></label><label>Hora <input type="time" data-match-field="time" data-id="${m.id}" data-cat="${m.categoryId}" value="${esc(m.time||'')}"></label><label>Pista <select data-match-field="court" data-id="${m.id}" data-cat="${m.categoryId}"><option value="">Sin asignar</option>${Array.from({length:Math.max(1,Math.min(24,Number(activeT()?.courts)||1))},(_,i)=>`<option ${m.court==='Pista '+(i+1)?'selected':''}>Pista ${i+1}</option>`).join('')}</select></label><label>Marcador <input class="score-input" type="number" min="0" max="99" inputmode="numeric" aria-label="Juegos ${esc(playerName(m.playerA))}" data-match-field="scoreA" data-id="${m.id}" data-cat="${m.categoryId}" value="${m.scoreA??''}"> : <input class="score-input" type="number" min="0" max="99" inputmode="numeric" aria-label="Juegos ${esc(playerName(m.playerB))}" data-match-field="scoreB" data-id="${m.id}" data-cat="${m.categoryId}" value="${m.scoreB??''}"></label><span class="status ${matchStatus(m)?'done':''}">${matchStatus(m)?'Terminado':'Pendiente'}</span><button class="btn small" data-action="save-match" data-id="${m.id}" data-cat="${m.categoryId}">Guardar</button><button class="btn danger small" data-action="delete-match" data-id="${m.id}" data-cat="${m.categoryId}">Eliminar</button></div></div>`}
-function standingsPage(){const t=activeT();if(!t)return pageHead('Clasificaciones','Consulta posiciones y resultados.')+empty('Primero crea un torneo.');return pageHead('Clasificaciones','Clasificaciones automáticas por grupo y resultados de liga.')+`<div class="stack">${t.categories.map(c=>{if(c.format==='groups_knockout'&&c.groups?.length){return `<div class="card"><div class="row between"><h3>${esc(c.name)}</h3><span class="tag">Grupos + eliminatoria</span></div>${c.groups.map(g=>{const stats=groupStats(c,g);return `<h4>${esc(g.name)} <span class="tag">${g.playerIds.length} jugadores</span></h4><div class="table-wrap"><table><thead><tr><th>#</th><th>Jugador</th><th>PJ</th><th>G</th><th>P</th><th>Juegos +</th><th>Juegos −</th><th>Puntos</th></tr></thead><tbody>${stats.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x.name)}${i<2?' <span class="tag">Clasifica</span>':''}</td><td>${x.pj}</td><td>${x.g}</td><td>${x.p}</td><td>${x.f}</td><td>${x.contra}</td><td><b>${x.pts}</b></td></tr>`).join('')}</tbody></table></div>`}).join('')}${c.groups.every(g=>g.matches.every(matchStatus))&&!c.matches.some(m=>m.stage==='knockout')?`<p><button class="btn" data-action="generate-knockout" data-cat="${c.id}">Crear cuadro eliminatorio con los 2 primeros de cada grupo</button></p>`:''}${c.matches.some(m=>m.stage==='knockout')?bracketView(c):''}</div>`}
- const stats=c.playerIds.map(id=>({id,name:playerName(id),pj:0,g:0,p:0,f:0,contra:0,pts:0})),byId=Object.fromEntries(stats.map(x=>[x.id,x]));c.matches.filter(m=>m.stage!=='knockout'&&matchStatus(m)).forEach(m=>{const a=byId[m.playerA],b=byId[m.playerB];if(!a||!b)return;a.pj++;b.pj++;a.f+=Number(m.scoreA);a.contra+=Number(m.scoreB);b.f+=Number(m.scoreB);b.contra+=Number(m.scoreA);if(Number(m.scoreA)>Number(m.scoreB)){a.g++;b.p++;a.pts+=c.format==='league'?2:0}else if(Number(m.scoreB)>Number(m.scoreA)){b.g++;a.p++;b.pts+=c.format==='league'?2:0}});stats.sort((a,b)=>b.pts-a.pts||b.g-a.g||(b.f-b.contra)-(a.f-a.contra)||a.name.localeCompare(b.name));return `<div class="card"><div class="row between"><h3>${esc(c.name)}</h3><span class="tag">${c.format==='league'?'Liga':c.format==='knockout'?'Eliminatoria':'Competición'}</span></div>${stats.length?`<div class="table-wrap"><table><thead><tr><th>#</th><th>Jugador</th><th>PJ</th><th>G</th><th>P</th><th>Juegos +</th><th>Juegos −</th><th>Puntos</th></tr></thead><tbody>${stats.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x.name)}</td><td>${x.pj}</td><td>${x.g}</td><td>${x.p}</td><td>${x.f}</td><td>${x.contra}</td><td><b>${x.pts}</b></td></tr>`).join('')}</tbody></table></div>`:empty('No hay jugadores inscritos en esta categoría.')}</div>`}).join('')||empty('Crea una categoría para generar clasificaciones.')}</div>`}
-function backupPage(){return pageHead('Copias de seguridad','Exporta tus datos antes de cambiar de dispositivo o borrar los datos del navegador.')+`<div class="grid"><div class="card"><h3>📥 Exportar copia</h3><p>Guarda torneos, categorías, jugadores, partidos y resultados en un archivo JSON.</p><button class="btn" data-action="export-backup">Descargar copia de seguridad</button></div><div class="card"><h3>📤 Importar copia</h3><p>Recupera una copia exportada previamente. Puedes reemplazar todos los datos actuales.</p><button class="btn secondary" data-action="import-backup">Seleccionar archivo JSON</button></div><div class="card"><h3>📄 Exportar jugadores</h3><p>Descarga el directorio de jugadores en formato CSV para abrirlo con Excel.</p><button class="btn secondary" data-action="export-csv">Descargar jugadores CSV</button></div></div><div class="notice" style="margin-top:14px"><strong>Importante:</strong> los datos se guardan en el navegador de este dispositivo. No borres los datos del sitio ni desinstales el navegador sin exportar antes una copia. La aplicación no sincroniza automáticamente con otros dispositivos.</div><div class="card" style="margin-top:14px"><h3>Estado de los datos</h3><p>Jugadores: <strong>${state.players.length}</strong> · Torneos: <strong>${state.tournaments.length}</strong> · Partidos: <strong>${allMatches({categories:state.tournaments.flatMap(t=>t.categories)}).length}</strong></p><p class="backup-note">Recomendación: exporta una copia al finalizar cada jornada y guarda el archivo en una ubicación que puedas encontrar fácilmente.</p><button class="btn danger" data-action="clear-all">Borrar todos los datos</button></div>`}
-function openModal(title,body,onSubmit,submit='Guardar'){const d=$('#modal');$('#modalTitle').textContent=title;$('#modalBody').innerHTML=body;$('#modalSave').textContent=submit;d._submit=onSubmit;d.showModal()}
-function closeModal(){$('#modal').close()}
-function field(label,name,value='',type='text',required=false,extra=''){return `<div class="field"><label for="f_${name}">${label}</label><input id="f_${name}" name="${name}" type="${type}" value="${esc(value)}" ${required?'required':''} ${extra}></div>`}
-function newTournament(id){const t=state.tournaments.find(x=>x.id===id)||{name:'',startDate:today(),endDate:'',location:'Polideportivo Municipal de Guardamar',courts:4,notes:''};openModal(id?'Editar torneo':'Nuevo torneo',`<div class="form-grid">${field('Nombre del torneo','name',t.name,'text',true)}${field('Número de pistas','courts',t.courts,'number',true,'min="1" max="24"')}${field('Fecha de inicio','startDate',t.startDate,'date')}${field('Fecha de fin','endDate',t.endDate,'date')}${field('Lugar','location',t.location,'text',false,'class="full"')}${field('Notas','notes',t.notes,'text',false,'class="full"')}</div>`,fd=>{const name=fd.get('name').trim();if(!name)throw Error('Escribe el nombre del torneo.');const obj={...t,id:t.id||uid(),name,startDate:fd.get('startDate'),endDate:fd.get('endDate'),location:fd.get('location'),courts:Math.max(1,Math.min(24,Number(fd.get('courts'))||1)),notes:fd.get('notes'),categories:t.categories||[]};if(id){state.tournaments=state.tournaments.map(x=>x.id===id?obj:x)}else{state.tournaments.push(obj);state.activeTournament=obj.id}save();closeModal();render();notify('Torneo guardado.')})}
-function assignPairCategories(){
- const t=activeT();if(!t){notify('Primero abre el Torneo de Navidad 2026.');return}
- const choices=['Élite','Primera','Segunda','Tercera','1°Femenina','2° Femenina','1°Juvenil','2° Juvenil','Tercera Juvenil'];
- const rows=state.players.map((p,i)=>`<div class="field"><label>${i+1}. ${esc(p.name)}</label><select name="cat_${p.id}"><option value="">— Seleccionar categoría —</option>${choices.map(c=>`<option value="${c}" ${p.category===c?'selected':''}>${c}</option>`).join('')}</select></div>`).join('');
- openModal('Asignar parejas por categoría',`<div class="stack"><p class="smalltext muted">Selecciona la categoría correspondiente a cada pareja inscrita. Las parejas permanecerán juntas como una sola unidad de competición.</p>${rows}<div class="notice">Después de guardar, la aplicación organizará las parejas en sus categorías. Los grupos se generarán más adelante, cuando cada categoría tenga un número válido de parejas.</div></div>`,fd=>{
-   const assigned={};state.players.forEach(p=>{const c=fd.get('cat_'+p.id)||'';p.category=c;if(c)(assigned[c]??=[]).push(p.id)});
-   Object.entries(assigned).forEach(([name,ids])=>{let c=t.categories.find(x=>x.name.toLowerCase()===name.toLowerCase());if(!c){c={id:uid(),name,format:'groups_knockout',playerIds:[],seeds:[],matches:[],groups:[],scheduleDate:t.startDate||today(),startTime:'09:00'};t.categories.push(c)}c.playerIds=ids});
-   // Keep existing categories with matches even if no pair is currently assigned to them.
-   t.categories=t.categories.filter(c=>assigned[c.name]||c.matches?.length);
-   save();closeModal();render();notify('Categorías asignadas y listas para organizar grupos.');
- },'Guardar categorías');
-}
-function newPlayer(id){const p=state.players.find(x=>x.id===id)||{name:'',club:'',phone:'',email:'',category:''};const playerCategories=['Élite','Primera','Segunda','Tercera','1°Femenina','2° Femenina','1°Juvenil','2° Juvenil','Tercera Juvenil'];openModal(id?'Editar jugador':'Nuevo jugador',`<div class="form-grid">${field('Nombre y apellidos','name',p.name,'text',true)}<div class="field"><label>Categoría</label><select name="category" required><option value="">— Selecciona categoría —</option>${playerCategories.map(c=>`<option value="${c}" ${p.category===c?'selected':''}>${c}</option>`).join('')}</select></div>${field('Club','club',p.club)}${field('Teléfono','phone',p.phone,'tel')}${field('Correo electrónico','email',p.email,'email')}${field('Incompatibilidades horarias','availability',p.availability||'','text')}<div class="smalltext muted">Ejemplo: viernes no disponible antes de las 18:00; sábado 09:00-12:00 ocupado.</div></div>`,fd=>{const name=fd.get('name').trim();if(!name)throw Error('Escribe el nombre del jugador.');if(!fd.get('category'))throw Error('Selecciona la categoría del jugador.');if(state.players.some(x=>x.name.toLowerCase()===name.toLowerCase()&&x.id!==id))throw Error('Ya existe un jugador con ese nombre.');const obj={...p,id:p.id||uid(),name,category:fd.get('category'),club:fd.get('club'),phone:fd.get('phone'),email:fd.get('email'),availability:fd.get('availability')||''};if(id)state.players=state.players.map(x=>x.id===id?obj:x);else state.players.push(obj);save();closeModal();render();notify('Jugador guardado.')})}
-function newCategory(){const t=activeT();if(!t){notify('Primero crea un torneo.');return}if(!state.players.length){notify('Añade primero los jugadores.');newPlayer();return}const presets=['Élite','Primera','Segunda','1.º Infantil','2.º Infantil'];openModal('Añadir categoría',`<div class="stack"><div class="field"><label>Categorías habituales del club</label><select id="categoryPreset"><option value="">— Elegir categoría —</option>${presets.map(n=>`<option value="${n}">${n}</option>`).join('')}<option value="__custom">Otra categoría (escribir nombre)</option></select><span class="smalltext muted">Puedes utilizar las categorías habituales o escribir una personalizada.</span></div><div class="field"><label>Nombre de la categoría</label><input id="categoryName" name="name" required placeholder="Ej. Primera masculina"></div><div class="field"><label>Formato</label><select name="format"><option value="groups_knockout">Liga por grupos (máx. 4) + cuadro eliminatorio</option><option value="league">Liga todos contra todos (sin grupos)</option><option value="knockout">Cuadro eliminatorio directo</option></select></div><div class="form-grid"><div class="field"><label>Fecha de inicio</label><input name="scheduleDate" type="date" value="${esc(t.startDate||today())}"></div><div class="field"><label>Hora del primer partido</label><input name="startTime" type="time" value="09:00"></div></div><div class="notice">La aplicación creará grupos de 3 o 4 parejas, generará la liga de cada grupo y asignará automáticamente fechas, horas y pistas en bloques de 90 minutos. Después de la fase de grupos podrás crear el cuadro eliminatorio.</div><div class="field"><label>Cabezas de serie (opcional; selección múltiple)</label><select name="seeds" multiple>${state.players.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('')}</select><span class="smalltext muted">Selecciona aquí los cabezas de serie. Se distribuirán en grupos distintos cuando sea posible.</span></div><div class="field"><label>Jugadores participantes (puedes elegir varios)</label><select name="players" multiple required>${state.players.map(p=>`<option value="${p.id}">${esc(p.name)}${p.club?' · '+esc(p.club):''}</option>`).join('')}</select><span class="smalltext muted">En la tablet, toca los jugadores que quieras incluir. Mantén pulsado si el navegador lo requiere.</span></div></div>`,fd=>{const name=fd.get('name').trim(),ids=[...$('#modalBody select[name="players"]').selectedOptions].map(o=>o.value);if(!name)throw Error('Elige o escribe el nombre de la categoría.');if(!ids.length)throw Error('Selecciona al menos un jugador.');if(t.categories.some(c=>c.name.toLowerCase()===name.toLowerCase()))throw Error('Ya existe esa categoría en este torneo.');const c={id:uid(),name,format:fd.get('format'),playerIds:ids,seeds:[...$('#modalBody select[name="seeds"]').selectedOptions].map(o=>o.value).filter(x=>ids.includes(x)),matches:[],scheduleDate:fd.get('scheduleDate')||t.startDate||today(),startTime:fd.get('startTime')||'09:00',groups:[]};t.categories.push(c);selectedCategory=c.id;save();closeModal();render();notify('Categoría '+name+' creada.')},'Crear categoría');const preset=$('#categoryPreset'),nameInput=$('#categoryName');preset.addEventListener('change',()=>{if(preset.value&&preset.value!=='__custom')nameInput.value=preset.value;else if(preset.value==='__custom'){nameInput.value='';nameInput.focus()}})}
-function newMatch(){const t=activeT();if(!t){notify('Primero crea un torneo.');return}if(!t.categories.length){notify('Crea primero una categoría.');newCategory();return}const cat=t.categories[0];openModal('Programar partido',`<div class="stack"><div class="field"><label>Categoría</label><select name="cat" id="newMatchCat">${t.categories.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('')}</select></div><div class="field"><label>Jugador o pareja A</label><select name="a" id="newMatchA" required></select></div><div class="field"><label>Jugador o pareja B</label><select name="b" id="newMatchB" required></select></div><div class="form-grid">${field('Fecha','date',today(),'date')}${field('Hora','time','10:00','time')}<div class="field"><label>Pista</label><select name="court"><option value="">Sin asignar</option>${Array.from({length:Math.max(1,Number(t.courts)||1)},(_,i)=>`<option>Pista ${i+1}</option>`).join('')}</select></div>${field('Ronda / jornada','round','Jornada 1')}</div></div>`,fd=>{const c=categoryById(t,fd.get('cat')),a=fd.get('a'),b=fd.get('b');if(!c||!a||!b||a===b)throw Error('Selecciona dos jugadores distintos.');c.matches.push({id:uid(),playerA:a,playerB:b,round:fd.get('round'),date:fd.get('date'),time:fd.get('time'),court:fd.get('court'),scoreA:'',scoreB:'',status:'pending'});save();closeModal();render();notify('Partido programado.')});const fill=()=>{const c=categoryById(t,$('#newMatchCat').value);const opts=(c?.playerIds||[]).map(id=>`<option value="${id}">${esc(playerName(id))}</option>`).join('');$('#newMatchA').innerHTML=opts;$('#newMatchB').innerHTML=opts;};$('#newMatchCat').addEventListener('change',fill);fill()}
-function scheduleMatches(t,c,matches,startDate,startTime){
- const courts=Math.max(1,Math.min(24,Number(t.courts)||1));
- let day=startDate||t.startDate||today(),time=startTime||'09:00';
- const end=t.endDate||day, dates=[];let d=new Date(day+'T12:00:00'),last=new Date(end+'T12:00:00');if(last<d)last=d;
- while(d<=last&&dates.length<366){dates.push(d.toISOString().slice(0,10));d.setDate(d.getDate()+1)}if(!dates.length)dates.push(day);
- const [sh,sm]=time.split(':').map(Number),base=sh*60+sm;
- // Randomized tie-breaks but prioritize seeded players and spread each player's matches.
- const seedSet=new Set(c.seeds||[]);
- const pending=[...matches];let placed=[],slots=[];
- dates.forEach(date=>{for(let mins=base;mins+90<=22*60;mins+=90)for(let court=1;court<=courts;court++)slots.push({date,time:String(Math.floor(mins/60)).padStart(2,'0')+':'+String(mins%60).padStart(2,'0'),court:'Pista '+court,mins})});
- const appearances={};
- function unavailable(m,slot){
-   const ids=[m.playerA,m.playerB].filter(Boolean);
-   return ids.some(id=>{const p=state.players.find(x=>x.id===id);if(!p||!p.availability)return false;const a=p.availability.toLowerCase();
-     // Interpret common day/time restrictions; uncertain natural-language rules are flagged for manual review.
-     const dayName=new Date(slot.date+'T12:00:00').toLocaleDateString('es-ES',{weekday:'long'}).toLowerCase();
-     if(a.includes(dayName)&&(/no disponible|no puede|ocupad|trabaj|incompatible/.test(a)))return true;
-     const ranges=[...a.matchAll(/(\d{1,2}):(\d{2})\s*[-a]\s*(\d{1,2}):(\d{2})/g)];
-     if(ranges.some(r=>{let x=+r[1]*60+ +r[2],y=+r[3]*60+ +r[4];return slot.mins<y&&slot.mins+90>x}))return true;
-     return false;
-   });
- }
- function consecutivePenalty(m,slot){
-   let penalty=0;
-   [m.playerA,m.playerB].filter(Boolean).forEach(id=>{
-     const prev=placed.filter(x=>(x.playerA===id||x.playerB===id)&&x.date===slot.date).sort((a,b)=>a.mins-b.mins);
-     if(prev.length>=2&&prev.slice(-2).every(x=>x.mins+90===slot.mins))penalty+=1000;
-     if(prev.length)penalty+=prev.filter(x=>Math.abs(x.mins-slot.mins)<=90).length*10;
-   });return penalty;
- }
- slots.forEach(slot=>{
-   if(!pending.length)return;
-   let best=-1,bestScore=Infinity;
-   pending.forEach((m,i)=>{
-     if(unavailable(m,slot))return;
-     let score=consecutivePenalty(m,slot);
-     [m.playerA,m.playerB].filter(Boolean).forEach(id=>{if(seedSet.has(id))score-=2;if((appearances[id]||0)>0)score+=appearances[id]*0.2});
-     score+=Math.random()*0.05;
-     if(score<bestScore){best=i;bestScore=score}
-   });
-   if(best<0)return;
-   const m=pending.splice(best,1)[0];Object.assign(m,{date:slot.date,time:slot.time,court:slot.court,duration:90});m.scheduleWarning=bestScore>=1000?'Revisar: posible tercer partido seguido':'';placed.push({...m,mins:slot.mins});[m.playerA,m.playerB].filter(Boolean).forEach(id=>appearances[id]=(appearances[id]||0)+1);
- });
- // If constraints block slots, leave unscheduled rather than silently violating them.
- pending.forEach(m=>{m.date='';m.time='';m.court='';m.duration=90;m.scheduleWarning='Sin hueco compatible: revisar restricciones/horarios';});
-}
-function buildGroups(ids,seeds=[]){
- const n=ids.length;if(n<3||n===5)throw Error('No es posible formar grupos de 3 o 4 parejas con '+n+' inscritas. Se necesitan 3 o al menos 6.');
- const shuffled=[...ids];for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}
- const count=Math.ceil(n/4),sizes=Array(count).fill(Math.floor(n/count));for(let i=0;i<n%count;i++)sizes[i]++;
- const groups=sizes.map((size,i)=>({id:uid(),name:'Grupo '+String.fromCharCode(65+i),playerIds:[],matches:[],capacity:size}));
- const seedList=shuffled.filter(id=>seeds.includes(id)),rest=shuffled.filter(id=>!seeds.includes(id));
- seedList.forEach((id,i)=>{const g=groups.find(x=>x.playerIds.length<x.capacity);if(g)g.playerIds.push(id)});
- rest.forEach(id=>{const g=groups.find(x=>x.playerIds.length<x.capacity);if(g)g.playerIds.push(id)});
- return groups;
-}
-function generateMatches(){const t=activeT();if(!t){notify('Primero crea un torneo.');return}const options=t.categories.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('');if(!options){notify('Crea primero una categoría.');newCategory();return}openModal('Generar competición y calendario',`<div class="stack"><div class="field"><label>Categoría</label><select name="cat">${options}</select></div><div class="field"><label>Modelo de torneo</label><select name="kind"><option value="groups_knockout">Liga por grupos de 3 o 4 parejas + cuadro eliminatorio</option><option value="league">Liga todos contra todos</option><option value="knockout">Cuadro eliminatorio directo</option></select></div><div class="form-grid"><div class="field"><label>Fecha de inicio</label><input name="date" type="date" value="${esc(t.startDate||today())}" required></div><div class="field"><label>Hora inicial diaria</label><input name="time" type="time" value="09:00" required></div></div><div class="notice">Antes de generar horarios, registra las incompatibilidades en la ficha de cada jugador. El sistema intentará evitar tres partidos seguidos del mismo jugador y respetar las incompatibilidades indicadas.</div><div class="notice"><b>Automático:</b> grupos de 3 o 4 parejas, partidos de 90 minutos, reparto entre pistas y programación consecutiva. Para grupos + eliminatoria se clasificarán los 2 primeros de cada grupo.</div></div>`,fd=>{const c=categoryById(t,fd.get('cat'));if(!c)throw Error('Categoría no encontrada.');if(c.matches.length)throw Error('Esta categoría ya tiene partidos. Elimina sus partidos antes de generar otro calendario.');const ids=[...c.playerIds];if(ids.length<2)throw Error('Se necesitan al menos dos parejas.');if(fd.get('kind')==='groups_knockout'&&(ids.length<3||ids.length===5))throw Error('Para grupos de 3 o 4 parejas, esta categoría debe tener 3 o al menos 6 parejas. Ahora tiene '+ids.length+'.');const kind=fd.get('kind'),startDate=fd.get('date')||t.startDate||today(),startTime=fd.get('time')||'09:00';c.format=kind;c.scheduleDate=startDate;c.startTime=startTime;c.groups=[];let generated=[];
- if(kind==='groups_knockout'){c.groups=buildGroups(ids,c.seeds||[]);c.groups.forEach(g=>{for(let i=0;i<g.playerIds.length;i++)for(let j=i+1;j<g.playerIds.length;j++){const m={id:uid(),playerA:g.playerIds[i],playerB:g.playerIds[j],round:g.name,groupId:g.id,groupName:g.name,stage:'groups',scoreA:'',scoreB:'',status:'pending'};g.matches.push(m);generated.push(m)}});if(!generated.length)throw Error('No se han podido crear partidos para los grupos.');}
- else if(kind==='league'){for(let i=0;i<ids.length;i++)for(let j=i+1;j<ids.length;j++)generated.push({id:uid(),playerA:ids[i],playerB:ids[j],round:'Liga',stage:'league',scoreA:'',scoreB:'',status:'pending'});}
- else {const shuffled=[...ids];for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}for(let i=0;i<shuffled.length;i+=2){if(shuffled[i+1])generated.push({id:uid(),playerA:shuffled[i],playerB:shuffled[i+1],round:'Primera ronda',stage:'knockout',scoreA:'',scoreB:'',status:'pending'});else generated.push({id:uid(),playerA:shuffled[i],playerB:'',round:'Primera ronda',stage:'knockout',scoreA:'1',scoreB:'0',status:'done'})}}
- scheduleMatches(t,c,generated,startDate,startTime);c.matches.push(...generated);selectedCategory=c.id;save();closeModal();render();notify('Calendario creado: partidos de 90 minutos y pistas asignadas automáticamente.');},'Generar calendario')}
-function groupStats(c,g){const stats=g.playerIds.map(id=>({id,name:playerName(id),pj:0,g:0,p:0,f:0,contra:0,pts:0})),by=Object.fromEntries(stats.map(x=>[x.id,x]));(g.matches||[]).filter(matchStatus).forEach(m=>{const a=by[m.playerA],b=by[m.playerB];if(!a||!b)return;a.pj++;b.pj++;a.f+=Number(m.scoreA);a.contra+=Number(m.scoreB);b.f+=Number(m.scoreB);b.contra+=Number(m.scoreA);if(Number(m.scoreA)>Number(m.scoreB)){a.g++;b.p++;a.pts+=2}else if(Number(m.scoreB)>Number(m.scoreA)){b.g++;a.p++;b.pts+=2}});return stats.sort((a,b)=>b.pts-a.pts||b.g-a.g||(b.f-b.contra)-(a.f-a.contra)||a.name.localeCompare(b.name))}
-function generateKnockout(catId){const t=activeT(),c=categoryById(t,catId);if(!c||c.format!=='groups_knockout')return;if(c.matches.some(m=>m.stage==='knockout')){notify('El cuadro eliminatorio ya está creado.');return}if(!c.groups?.length){notify('No hay grupos creados.');return}if(c.groups.some(g=>(g.matches||[]).some(m=>!matchStatus(m)))){notify('Completa todos los partidos de todos los grupos antes de crear el cuadro.');return}const qualifiers=c.groups.map(g=>groupStats(c,g).slice(0,2)).flat().map(x=>x.id);if(qualifiers.length<2)throw new Error('Se necesitan al menos dos clasificados.');const shuffled=[...qualifiers];for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}const label='Cuadro eliminatorio · primera ronda',ms=[];for(let i=0;i<shuffled.length;i+=2){if(shuffled[i+1])ms.push({id:uid(),playerA:shuffled[i],playerB:shuffled[i+1],round:label,stage:'knockout',scoreA:'',scoreB:'',status:'pending'});else ms.push({id:uid(),playerA:shuffled[i],playerB:'',round:label,stage:'knockout',scoreA:'1',scoreB:'0',status:'done'})}scheduleMatches(t,c,ms,c.scheduleDate||t.startDate||today(),c.startTime||'09:00');c.matches.push(...ms);save();render();notify('Cuadro eliminatorio creado con los clasificados.');}
-function saveMatch(id,catId){const t=activeT(),c=categoryById(t,catId),m=c?.matches.find(x=>x.id===id);if(!m)return;const els=[...document.querySelectorAll(`[data-id="${id}"][data-cat="${catId}"][data-match-field]`)];els.forEach(el=>m[el.dataset.matchField]=el.value);if(m.scoreA!==''&&m.scoreB!==''&&m.playerB)m.status='done';else m.status='pending';save();render();notify('Partido actualizado.')}
-function deleteMatch(id,catId){const c=categoryById(activeT(),catId);if(c&&confirm('¿Eliminar este partido?')){c.matches=c.matches.filter(m=>m.id!==id);save();render();notify('Partido eliminado.')}}
-function exportBackup(){const blob=new Blob([JSON.stringify({...state,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});download(blob,'CT-Guardamar-copia-'+today()+'.json');notify('Copia de seguridad descargada.')}
-function download(blob,name){if(window.AndroidBridge&&typeof window.AndroidBridge.saveFile==='function'){const reader=new FileReader();reader.onload=()=>window.AndroidBridge.saveFile(name,String(reader.result),blob.type||'application/octet-stream');reader.readAsDataURL(blob);return}const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
-function exportCSV(){const rows=[['Nombre','Categoría','Club','Teléfono','Correo'],...state.players.map(p=>[p.name,p.category||'',p.club||'',p.phone||'',p.email||''])];const csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n');download(new Blob([csv],{type:'text/csv;charset=utf-8'}),'CT-Guardamar-jugadores-'+today()+'.csv')}
-function importBackup(file){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d||!Array.isArray(d.players)||!Array.isArray(d.tournaments))throw Error('Formato incorrecto: se necesitan las listas de jugadores y torneos.');const tournaments=d.tournaments.map(t=>({...t,categories:Array.isArray(t.categories)?t.categories:[]}));if(!confirm('La importación reemplazará todos los datos actuales. ¿Has guardado una copia de los datos actuales?'))return;state={version:1,players:d.players.map(p=>({...p,category:p.category||'',availability:p.availability||''})),tournaments,activeTournament:d.activeTournament||tournaments[0]?.id||null};save();render();notify('Copia importada correctamente: '+state.players.length+' jugadores y '+state.tournaments.length+' torneos.')}catch(e){notify('No se pudo importar: '+e.message)}};r.readAsText(file)}
-function bindMain(){const s=$('#activeTSelect');if(s)s.addEventListener('change',()=>{setActive(s.value);render()});const ps=$('#playerSearch');if(ps)ps.addEventListener('input',e=>{search=e.target.value;const pos=e.target.selectionStart;render();const n=$('#playerSearch');n.focus();n.setSelectionRange(pos,pos)});const cf=$('#categoryFilter');if(cf)cf.addEventListener('change',filterMatches);const sf=$('#matchStatusFilter');if(sf)sf.addEventListener('change',filterMatches);const ms=$('#matchSearch');if(ms)ms.addEventListener('input',filterMatches);const cd=$('#calendarDate');if(cd)cd.addEventListener('change',filterCalendar);const cc=$('#calendarCourt');if(cc)cc.addEventListener('change',filterCalendar)}
-function filterMatches(){const cat=$('#categoryFilter')?.value||'all',st=$('#matchStatusFilter')?.value||'all',q=($('#matchSearch')?.value||'').toLowerCase();document.querySelectorAll('[data-match-row]').forEach(el=>{el.classList.toggle('hidden',!( (cat==='all'||el.dataset.category===cat)&&(st==='all'||el.dataset.status===st)&&el.dataset.names.includes(q)))})}
-function filterCalendar(){const date=$('#calendarDate')?.value||'',court=$('#calendarCourt')?.value||'';document.querySelectorAll('[data-match-row]').forEach(el=>{const m=activeT()?.categories.flatMap(c=>c.matches).find(m=>m.id===el.dataset.matchRow);el.classList.toggle('hidden',!m||!!(date&&m.date!==date)||!!(court&&m.court!==court))})}
-function loadChristmasDemo(){
- if(!confirm('Se añadirá un torneo de prueba con 30 parejas de la fotografía. No se borrarán los datos existentes. ¿Continuar?'))return;
- const tournamentId=uid();
- const t={id:tournamentId,name:'Torneo Estrellas de Navidad 2026 · SIMULACIÓN',startDate:'2026-12-18',endDate:'2026-12-20',location:'Polideportivo Municipal de Guardamar',courts:4,notes:'Simulación con nombres de la fotografía. Parejas tratadas como unidades de competición; grupos sorteados de nuevo.',categories:[]};
- const definitions=[
- {name:'Primera',pairs:[['Roberto Sanz','Joaquín García'],['Sasha Ivanchenko','Andre Kosak'],['Sara Villar','Valeria Foschai'],['Daniil Nekhoroshev','Manuel Largo'],['Dmitry Nagorniy','Sv ajunas Navagruckas'.replace('Sv ajunas','Svajunas')]]},
- {name:'Segunda',pairs:[['Mykyta Klymchuk','Héctor Follana'],['Alexey Dvoretsky','Dmitry Frolov'],['Volodymyr Husiev','Aleksandr Bandin'],['Vicente Hijón','Francisco Ferrández']]},
- {name:'Tercera',pairs:[['Liudmyla Anisimova','Irina Kosak'],['Elena Bazarova','Elena Popova'],['Arsenii Nikonov','Nikita Nikonov'],['Renata Aurhanova','Oleg Bureac'],['Vladyslav Karpenko','Halyna Mukan'],['Olga Ilina','Taisia Makmak'],['Juan Carlos Agulló','Irina Bila'],['Alex Staravoytau','Mikhail Boev']]},
- {name:'1.ª Niños',pairs:[['Sofia Bonmatí','Olivia Pina'],['Artem Biyj','Tymo Lejchter'],['Oleksandra Znova','Kristina Bila'],['Daniela Piedecausa','Tomás Miori'],['Viktoriia Patsiura','Alisa Tovchyhrechko'],['Carla Albert','Carlota Pina'],['Antonio Palomar','Víctor Villaplana']]},
- {name:'2.ª Niños',pairs:[['Daniil Kolesnyk','Alisa Kolesnyk'],['Vega Andrés','Wuei Chen'],['Carmen Sanguino','Elisabeth Toboso'],['Kristyna Klymchuk','Antonina Lejchter'],['Chloe Bintiuc','Clara Valero'],['Edahi Aldeguer','Ailin Nuraliyeva']]}
- ];
- const pairIds=[];
- definitions.forEach(def=>{const c={id:uid(),name:def.name,format:'groups_knockout',playerIds:[],matches:[],groups:[],scheduleDate:'2026-12-18',startTime:'16:00'};def.pairs.forEach(pair=>{const id=uid();state.players.push({id,name:pair.join(' / '),club:'Pareja de dobles',phone:'',email:'',isPair:true,members:pair});c.playerIds.push(id);pairIds.push(id)});
- const ids=[...c.playerIds];for(let i=ids.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ids[i],ids[j]]=[ids[j],ids[i]]}const n=Math.ceil(ids.length/4);c.groups=Array.from({length:n},(_,i)=>({id:uid(),name:'Grupo '+String.fromCharCode(65+i),playerIds:[],matches:[]}));ids.forEach((id,i)=>c.groups[i%n].playerIds.push(id));c.groups.forEach(g=>{for(let i=0;i<g.playerIds.length;i++)for(let j=i+1;j<g.playerIds.length;j++){const m={id:uid(),playerA:g.playerIds[i],playerB:g.playerIds[j],round:g.name,groupId:g.id,groupName:g.name,stage:'groups',scoreA:'',scoreB:'',status:'pending',duration:90};g.matches.push(m);c.matches.push(m)}});t.categories.push(c)});
- // Turnos definidos por el organizador: 12 encuentros el viernes y 25 el sábado.
- const slots=[];const add=(date,start,courts)=>{const [h,m]=start.split(':').map(Number);for(let i=0;i<courts;i++){const mins=h*60+m+i*90;slots.push({date,time:String(Math.floor(mins/60)).padStart(2,'0')+':'+String(mins%60).padStart(2,'0'),court:'Pista '+(i+1)})}};
- ['16:00','17:30','19:00'].forEach(tm=>add('2026-12-18',tm,4));add('2026-12-19','09:00',2);add('2026-12-19','10:30',3);['12:00','13:30','15:00','16:30','18:00'].forEach(tm=>add('2026-12-19',tm,4));
- const matches=t.categories.flatMap(c=>c.matches);matches.forEach((m,i)=>{const sl=slots[i];if(sl){m.date=sl.date;m.time=sl.time;m.court=sl.court}else{m.date='';m.time='';m.court='SIN HORARIO: revisar disponibilidad'} });
- state.tournaments.push(t);state.activeTournament=tournamentId;save();page='dashboard';render();notify('Simulación creada: 30 parejas, grupos sorteados y '+matches.length+' partidos de liga.');
-}
-function handleAction(b){const a=b.dataset.action,id=b.dataset.id,cat=b.dataset.cat;switch(a){case'load-christmas-demo':loadChristmasDemo();break;case'new-tournament':newTournament();break;case'edit-tournament':newTournament(id);break;case'activate-tournament':setActive(id);render();break;case'delete-tournament':if(confirm('¿Eliminar el torneo y todas sus categorías y partidos?')){state.tournaments=state.tournaments.filter(t=>t.id!==id);if(state.activeTournament===id)state.activeTournament=state.tournaments[0]?.id||null;save();render();notify('Torneo eliminado.')}break;case'new-player':newPlayer();break;case'assign-pair-categories':assignPairCategories();break;case'edit-player':newPlayer(id);break;case'delete-player':if(confirm('¿Eliminar este jugador del directorio? Los partidos anteriores pueden quedar asociados a un jugador pendiente.')){state.players=state.players.filter(p=>p.id!==id);state.tournaments.forEach(t=>t.categories.forEach(c=>c.playerIds=c.playerIds.filter(x=>x!==id)));save();render();notify('Jugador eliminado.')}break;case'new-category':newCategory();break;case'new-match':newMatch();break;case'generate-matches':generateMatches();break;case'generate-knockout':generateKnockout(cat);break;case'advance-round':advanceRound(cat);break;case'save-match':saveMatch(id,cat);break;case'delete-match':deleteMatch(id,cat);break;case'export-backup':exportBackup();break;case'import-backup':$('#importFile').click();break;case'export-csv':exportCSV();break;case'clear-all':if(confirm('ATENCIÓN: se borrarán todos los torneos, jugadores y resultados de este navegador. ¿Continuar?')&&confirm('Última confirmación: ¿has exportado una copia de seguridad?')){state=fresh();save();render();notify('Datos borrados.')}break}}
-document.addEventListener('click',e=>{const navb=e.target.closest('[data-page]');if(navb){nav(navb.dataset.page);return}const b=e.target.closest('[data-action]');if(b){handleAction(b);return}});$('#quickNew').addEventListener('click',()=>newTournament());$('#headerBackup').addEventListener('click',()=>nav('backup'));$('#modalX').addEventListener('click',closeModal);$('#modalCancel').addEventListener('click',closeModal);$('#modal').addEventListener('click',e=>{if(e.target===$('#modal'))closeModal()});$('#modalForm').addEventListener('submit',e=>{e.preventDefault();try{$('#modal')._submit(new FormData(e.currentTarget))}catch(err){notify(err.message||'Revisa los datos introducidos.')}});$('#importFile').addEventListener('change',e=>{const f=e.target.files[0];if(f)importBackup(f);e.target.value=''});
-// Make calendar creation discoverable on its own page.
-const oldRender=render;render=function(){oldRender();if(page==='calendar'||page==='matches'){const h=$('.page-title');if(h&&!$('#generateMatchesBtn')){const b=document.createElement('button');b.className='btn secondary';b.id='generateMatchesBtn';b.textContent='⚙ Generar partidos';b.dataset.action='generate-matches';h.append(b)}}};
-render();
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+(function () {
+    'use strict';
+    var KEY = 'ct_guardamar_tournament_manager_v1';
+    var $ = function (s) { return document.querySelector(s); };
+    var uid = function () { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); };
+    var esc = function (s) { return String(s !== null && s !== void 0 ? s : '').replace(/[&<>"']/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]); }); };
+    var today = function () { return new Date().toISOString().slice(0, 10); };
+    var fmtDate = function (s) { return s ? new Date(s + 'T12:00:00').toLocaleDateString('es-ES') : 'Sin fecha'; };
+    var page = 'dashboard', search = '', toastTimer;
+    var selectedCategory = null;
+    function fresh() { return { version: 1, players: [], tournaments: [], activeTournament: null }; }
+    var INITIAL_BACKUP = { "version": 1, "players": [{ "name": "Alisa Tovchyhrechko/Oleksandra Znova", "club": "", "phone": "605739408", "email": "aliceandreenko@gmail.com", "id": "mwum8qwhmcy8kl", "availability": "" }, { "name": "Alexander Solovtsov/Egor Lazarev", "club": "", "phone": "653729636", "email": "alex@topdec.ru", "id": "mwumbbqkoic1mj", "availability": "" }, { "name": "Gaidash Ievgenii/Dmytro Moiseienko", "club": "", "phone": "+380675095813", "email": "gov2015@ukr.net", "id": "mwumevrstotbzf", "availability": "" }, { "name": "Sofía Bonmati/Olivia Pina", "club": "", "phone": "685607782", "email": "pinagaleote@hotmail.com", "id": "mwumho7sjmfp4c", "availability": "" }, { "name": "Volodymyr Husiev/Alexander Bandin", "club": "", "phone": "+34675179107", "email": "gusevvolodumyr12@gmail.com", "id": "mwumlpqg2lcksl", "availability": "" }, { "name": "Tymoteusz Lejchter/Héctor Follana", "club": "", "phone": "624041704", "email": "lejchterkarolina@gmail.com", "id": "mwumonc81gb9i2", "availability": "" }, { "name": "Dmitry Frolov/Aleksey Dvoretskiy", "club": "", "phone": "611218585", "email": "ssav1318@gmail.com", "id": "mwumrhwl6jxtng", "availability": "" }, { "name": "Yelizaveta Pilhalieva/Tetina Stepanenko", "club": "", "phone": "625552675", "email": "elizabeth.pigaleva@gmail.com", "id": "mwumxyiiude81y", "availability": "" }, { "name": "Ishan Rico/Silvio Rico", "club": "", "phone": "663879804", "email": "", "id": "mwumzqj2m566ec", "availability": "" }], "tournaments": [{ "name": "Torneo de Navidad 2026", "startDate": "2026-12-18", "endDate": "2026-12-20", "location": "Polideportivo Municipal de Guardamar", "courts": 4, "notes": "", "id": "mwum3tvpe711ht", "categories": [] }], "activeTournament": "mwum3tvpe711ht", "exportedAt": "2026-11-24T12:04:23.057Z" };
+    var state = load();
+    function load() {
+        try {
+            var raw = localStorage.getItem(KEY);
+            if (raw) {
+                var s = JSON.parse(raw);
+                if (s && Array.isArray(s.players) && Array.isArray(s.tournaments))
+                    return s;
+            }
+        }
+        catch (e) { }
+        // La copia facilitada se carga únicamente si este navegador todavía no tiene datos.
+        var initial = JSON.parse(JSON.stringify(INITIAL_BACKUP));
+        initial.tournaments = initial.tournaments.map(function (t) { return (__assign(__assign({}, t), { categories: Array.isArray(t.categories) ? t.categories : [] })); });
+        return initial;
+    }
+    function save() { try {
+        localStorage.setItem(KEY, JSON.stringify(state));
+        return true;
+    }
+    catch (e) {
+        notify('No se pudo guardar. Exporta una copia y libera espacio del navegador.');
+        return false;
+    } }
+    function notify(t) { var el = $('#toast'); el.textContent = t; el.classList.remove('hidden'); clearTimeout(toastTimer); toastTimer = setTimeout(function () { return el.classList.add('hidden'); }, 3000); }
+    function activeT() { return state.tournaments.find(function (t) { return t.id === state.activeTournament; }) || state.tournaments[0] || null; }
+    function setActive(id) { state.activeTournament = id; save(); }
+    function allMatches(t) {
+        if (t === void 0) { t = activeT(); }
+        return t ? t.categories.flatMap(function (c) { return c.matches.map(function (m) { return (__assign(__assign({}, m), { categoryId: c.id, categoryName: c.name, tournamentId: t.id })); }); }) : [];
+    }
+    function playerName(id) { var _a; return ((_a = state.players.find(function (p) { return p.id === id; })) === null || _a === void 0 ? void 0 : _a.name) || 'Jugador pendiente'; }
+    function categoryById(t, id) { return t === null || t === void 0 ? void 0 : t.categories.find(function (c) { return c.id === id; }); }
+    function matchStatus(m) { return m.status === 'done' || (m.scoreA !== '' && m.scoreB !== '' && m.scoreA != null && m.scoreB != null); }
+    function nav(p) { page = p; document.querySelectorAll('[data-page]').forEach(function (b) { return b.classList.toggle('active', b.dataset.page === p); }); render(); }
+    function pageHead(title, sub, button) {
+        if (button === void 0) { button = ''; }
+        return "<div class=\"page-title\"><div><h2>".concat(title, "</h2><p>").concat(sub || '', "</p></div>").concat(button, "</div>");
+    }
+    function empty(msg, button) {
+        if (button === void 0) { button = ''; }
+        return "<div class=\"empty\"><div style=\"font-size:30px;margin-bottom:8px\">\uD83C\uDFBE</div><strong>".concat(msg, "</strong><p class=\"smalltext\">Los datos se guardan en este dispositivo.</p>").concat(button, "</div>");
+    }
+    function tSelect() { return "<div class=\"field\"><label for=\"activeTSelect\">Torneo activo</label><select id=\"activeTSelect\">".concat(state.tournaments.length ? state.tournaments.map(function (t) { var _a; return "<option value=\"".concat(t.id, "\" ").concat(t.id === ((_a = activeT()) === null || _a === void 0 ? void 0 : _a.id) ? 'selected' : '', ">").concat(esc(t.name), "</option>"); }).join('') : '<option value="">Crea un torneo para empezar</option>', "</select></div>"); }
+    function render() { var main = $('#main'); try {
+        state.players = Array.isArray(state.players) ? state.players : [];
+        state.tournaments = Array.isArray(state.tournaments) ? state.tournaments : [];
+        state.tournaments.forEach(function (t) { t.categories = Array.isArray(t.categories) ? t.categories : []; t.categories.forEach(function (c) { c.playerIds = Array.isArray(c.playerIds) ? c.playerIds : []; c.matches = Array.isArray(c.matches) ? c.matches : []; c.groups = Array.isArray(c.groups) ? c.groups : []; }); });
+        switch (page) {
+            case 'dashboard':
+                main.innerHTML = dashboard();
+                break;
+            case 'tournaments':
+                main.innerHTML = tournamentsPage();
+                break;
+            case 'players':
+                main.innerHTML = playersPage();
+                break;
+            case 'calendar':
+                main.innerHTML = calendarPage();
+                break;
+            case 'matches':
+                main.innerHTML = matchesPage();
+                break;
+            case 'standings':
+                main.innerHTML = standingsPage();
+                break;
+            case 'backup':
+                main.innerHTML = backupPage();
+                break;
+            default: main.innerHTML = dashboard();
+        }
+        bindMain();
+    }
+    catch (err) {
+        console.error('Error al mostrar la pantalla', err);
+        main.innerHTML = '<div class="notice"><b>No se ha podido mostrar esta sección.</b><p>' + esc(err && err.message ? err.message : String(err)) + '</p><button class="btn secondary" onclick="location.reload()">Volver a cargar</button></div>';
+    } }
+    function dashboard() { var t = activeT(), matches = allMatches(t), played = matches.filter(matchStatus).length, players = state.players.length; return pageHead('Resumen', 'Panel de control del Club Tenis Guardamar', "<button class=\"btn\" data-action=\"new-tournament\">\uFF0B Crear torneo</button>") + (t ? "<div class=\"card\" style=\"margin-bottom:14px\"><div class=\"form-grid\"><div>".concat(tSelect(), "</div><div><label class=\"field\"><span>Periodo</span><strong>").concat(fmtDate(t.startDate)).concat(t.endDate ? ' – ' + fmtDate(t.endDate) : '', "</strong></label></div></div><div class=\"row\" style=\"margin-top:10px\"><span class=\"tag\">").concat(esc(t.location || 'Sin ubicación'), "</span><span class=\"tag\">").concat(t.courts || 1, " pistas</span><button class=\"btn secondary small\" data-action=\"edit-tournament\" data-id=\"").concat(t.id, "\">Editar torneo</button><button class=\"btn secondary small\" data-action=\"new-category\">\uFF0B Categor\u00EDa</button></div></div>") : empty('Todavía no tienes torneos creados.', '<button class="btn" data-action="new-tournament">Crear mi primer torneo</button><p style="margin-top:12px"><button class="btn gold" data-action="assign-pair-categories">Asignar categorías a las parejas</button></p>')) + (t ? "<div class=\"grid\"><div class=\"card\"><div class=\"muted smalltext\">Parejas inscritas</div><div class=\"metric\">".concat(players, "</div></div><div class=\"card\"><div class=\"muted smalltext\">Partidos programados</div><div class=\"metric\">").concat(matches.length, "</div></div><div class=\"card\"><div class=\"muted smalltext\">Partidos terminados</div><div class=\"metric\">").concat(played, "</div><div class=\"smalltext muted\">").concat(matches.length ? Math.round(played / matches.length * 100) : 0, "% completado</div></div></div><div class=\"grid\" style=\"margin-top:14px\"><div class=\"card\"><h3>Accesos r\u00E1pidos</h3><div class=\"stack\"><button class=\"btn gold\" data-action=\"assign-pair-categories\">Asignar categor\u00EDas a las parejas</button><button class=\"btn secondary\" data-action=\"new-player\">\uFF0B A\u00F1adir jugador</button><button class=\"btn secondary\" data-action=\"new-category\">\uFF0B Crear categor\u00EDa</button><button class=\"btn secondary\" data-page=\"matches\">Introducir resultados</button><button class=\"btn secondary\" data-page=\"standings\">Ver clasificaciones</button></div></div><div class=\"card\" style=\"grid-column:span 2\"><h3>Pr\u00F3ximos partidos</h3>").concat(matches.filter(function (m) { return !matchStatus(m); }).sort(function (a, b) { return (a.date || '9999').localeCompare(b.date || '9999') || (a.time || '').localeCompare(b.time || ''); }).slice(0, 5).map(function (m) { return "<div class=\"item\"><div class=\"item-main\"><strong>".concat(esc(playerName(m.playerA)), " \u2014 ").concat(esc(playerName(m.playerB)), "</strong><p>").concat(esc(m.categoryName), " \u00B7 ").concat(fmtDate(m.date), " ").concat(esc(m.time || ''), " \u00B7 ").concat(esc(m.court || 'Pista sin asignar')).concat(m.scheduleWarning ? ' · ⚠ ' + esc(m.scheduleWarning) : '', "</p></div><button class=\"btn small\" data-action=\"edit-match\" data-cat=\"").concat(m.categoryId, "\" data-id=\"").concat(m.id, "\">Resultado</button></div>"); }).join('') || '<p class="muted">No hay partidos pendientes.</p>', "</div></div>") : '') + "<p class=\"footer\">CT Guardamar \u00B7 Los datos se almacenan en este navegador. Haz copias de seguridad peri\u00F3dicas.</p>"; }
+    function tournamentsPage() { return pageHead('Torneos', 'Crea y administra las competiciones.', "<button class=\"btn\" data-action=\"new-tournament\">\uFF0B Nuevo torneo</button>") + (state.tournaments.length ? "<div class=\"list\">".concat(state.tournaments.map(function (t) { var _a; return "<div class=\"item\"><div class=\"item-main\"><strong>".concat(esc(t.name), " ").concat(t.id === ((_a = activeT()) === null || _a === void 0 ? void 0 : _a.id) ? '<span class="tag">Activo</span>' : '', "</strong><p>").concat(fmtDate(t.startDate)).concat(t.endDate ? ' – ' + fmtDate(t.endDate) : '', " \u00B7 ").concat(t.categories.length, " categor\u00EDas \u00B7 ").concat(t.courts || 1, " pistas</p><p>").concat(esc(t.location || 'Sin ubicación'), " ").concat(t.notes ? '· ' + esc(t.notes) : '', "</p></div><div class=\"item-actions\"><button class=\"btn small\" data-action=\"activate-tournament\" data-id=\"").concat(t.id, "\">Abrir</button><button class=\"btn secondary small\" data-action=\"edit-tournament\" data-id=\"").concat(t.id, "\">Editar</button><button class=\"btn danger small\" data-action=\"delete-tournament\" data-id=\"").concat(t.id, "\">Eliminar</button></div></div>"); }).join(''), "</div>") : empty('No hay torneos creados.', '<button class="btn" data-action="new-tournament">Crear torneo</button>')); }
+    function playersPage() { var q = search.toLowerCase(); var ps = state.players.filter(function (p) { return p.name.toLowerCase().includes(q) || (p.club || '').toLowerCase().includes(q) || (p.category || '').toLowerCase().includes(q); }); return pageHead('Parejas inscritas', 'Asigna cada pareja a su categoría desde el menú desplegable.', "<div class=\"row\"><button class=\"btn gold\" data-action=\"assign-pair-categories\">Asignar categor\u00EDas</button><button class=\"btn\" data-action=\"new-player\">\uFF0B A\u00F1adir pareja</button></div>") + "<div class=\"toolbar\"><input id=\"playerSearch\" placeholder=\"Buscar jugador o club\u2026\" value=\"".concat(esc(search), "\"><span class=\"tag\">").concat(ps.length, " jugadores</span></div>") + (ps.length ? "<div class=\"list\">".concat(ps.map(function (p) { return "<div class=\"item\"><div class=\"item-main\"><strong>".concat(esc(p.name), "</strong><p><b>").concat(esc(p.category || 'Sin categoría'), "</b> \u00B7 ").concat(esc(p.club || 'Sin club'), " ").concat(p.phone ? '· ' + esc(p.phone) : '', " ").concat(p.email ? '· ' + esc(p.email) : '', "</p></div><div class=\"item-actions\"><button class=\"btn secondary small\" data-action=\"edit-player\" data-id=\"").concat(p.id, "\">Editar</button><button class=\"btn danger small\" data-action=\"delete-player\" data-id=\"").concat(p.id, "\">Eliminar</button></div></div>"); }).join(''), "</div>") : empty(state.players.length ? 'No hay coincidencias.' : 'Aún no has registrado jugadores.', '<button class="btn" data-action="new-player">Añadir jugador</button>')); }
+    function tournamentsOptions() { return state.tournaments.map(function (t) { var _a; return "<option value=\"".concat(t.id, "\" ").concat(t.id === ((_a = activeT()) === null || _a === void 0 ? void 0 : _a.id) ? 'selected' : '', ">").concat(esc(t.name), "</option>"); }).join(''); }
+    function categoryOptions(t) { return ((t === null || t === void 0 ? void 0 : t.categories) || []).map(function (c) { return "<option value=\"".concat(c.id, "\" ").concat(selectedCategory === c.id ? 'selected' : '', ">").concat(esc(c.name), "</option>"); }).join(''); }
+    function categoryFilter() { var t = activeT(); return "<div class=\"field\"><label>Categor\u00EDa</label><select id=\"categoryFilter\"><option value=\"all\">Todas las categor\u00EDas</option>".concat(categoryOptions(t), "</select></div>"); }
+    function calendarPage() { var t = activeT(); if (!t)
+        return pageHead('Jornadas y pistas', 'Organiza el calendario.') + empty('Primero crea un torneo.', '<button class="btn" data-action="new-tournament">Crear torneo</button>'); var ms = allMatches(t).sort(function (a, b) { return (a.date || '9999').localeCompare(b.date || '9999') || (a.time || '').localeCompare(b.time || ''); }); return pageHead('Jornadas y pistas', 'El calendario automático reserva bloques de 90 minutos y reparte los encuentros entre las pistas.', "<button class=\"btn\" data-action=\"generate-matches\">\u2699 Generar competici\u00F3n y horarios</button>") + "<div class=\"card\" style=\"margin-bottom:14px\"><div class=\"row between\"><h3>Resumen de pistas</h3><span class=\"tag\">".concat(t.courts || 1, " pistas configuradas</span></div><div class=\"court-grid\">").concat(Array.from({ length: Math.max(1, Math.min(24, Number(t.courts) || 1)) }, function (_, i) { var name = 'Pista ' + (i + 1), n = ms.filter(function (m) { return m.court === name && !matchStatus(m); }).length; return "<div class=\"court\"><strong>\uD83C\uDFBE ".concat(name, "</strong><span class=\"muted smalltext\">").concat(n, " partidos pendientes</span></div>"); }).join(''), "</div></div><div class=\"toolbar\"><input type=\"date\" id=\"calendarDate\"><select id=\"calendarCourt\"><option value=\"\">Todas las pistas</option>").concat(Array.from({ length: Math.max(1, Math.min(24, Number(t.courts) || 1)) }, function (_, i) { return "<option>Pista ".concat(i + 1, "</option>"); }).join(''), "</select></div><div id=\"calendarList\" class=\"list\">").concat(ms.length ? ms.map(function (m) { return matchCard(m); }).join('') : empty('No hay partidos programados.', '<button class="btn" data-action="new-match">Programar partido</button>'), "</div>"); }
+    function matchesPage() { var t = activeT(); if (!t)
+        return pageHead('Partidos y resultados', 'Introduce los marcadores.') + empty('Primero crea un torneo.', '<button class="btn" data-action="new-tournament">Crear torneo</button>'); return pageHead('Partidos y resultados', 'Programa encuentros e introduce los marcadores.', "<button class=\"btn\" data-action=\"new-match\">\uFF0B Nuevo partido</button>") + "<div class=\"toolbar\">".concat(categoryFilter(), "<select id=\"matchStatusFilter\"><option value=\"all\">Todos los estados</option><option value=\"pending\">Pendientes</option><option value=\"done\">Terminados</option></select><input id=\"matchSearch\" placeholder=\"Buscar jugador\u2026\"></div><div id=\"matchesList\" class=\"list\">").concat(allMatches(t).map(function (m) { return matchCard(m); }).join('') || empty('No hay partidos. Añade una categoría y genera o programa partidos.'), "</div>").concat(t.categories.filter(function (c) { return c.format === 'knockout'; }).map(function (c) { return bracketView(c); }).join('')); }
+    function bracketView(c) { var rounds = __spreadArray([], new Set(c.matches.map(function (m) { return m.round || 'Ronda'; })), true); if (!rounds.length)
+        return ''; var last = rounds[rounds.length - 1], lastMatches = c.matches.filter(function (m) { return (m.round || 'Ronda') === last; }), ready = lastMatches.length > 0 && lastMatches.every(matchStatus); var hasNext = lastMatches.length === 1 && lastMatches[0].playerB && matchStatus(lastMatches[0]); return "<div class=\"card\" style=\"margin-top:16px\"><div class=\"row between\"><h3>Cuadro eliminatorio \u00B7 ".concat(esc(c.name), "</h3>").concat(ready && !hasNext ? "<button class=\"btn\" data-action=\"advance-round\" data-cat=\"".concat(c.id, "\">Generar siguiente ronda</button>") : '', "</div><div class=\"bracket\">").concat(rounds.map(function (r) { return "<div class=\"round-col\"><h4>".concat(esc(r), "</h4>").concat(c.matches.filter(function (m) { return (m.round || 'Ronda') === r; }).map(function (m) { var a = Number(m.scoreA), b = Number(m.scoreB), winner = matchStatus(m) ? (m.playerB === '' ? m.playerA : (a > b ? m.playerA : b > a ? m.playerB : null)) : null; return "<div class=\"bracket-match\"><div class=\"".concat(winner === m.playerA ? 'winner' : '', "\">").concat(esc(playerName(m.playerA))).concat(m.playerB === '' ? ' · Exento' : '').concat(matchStatus(m) && m.playerB !== '' ? ' · ' + esc(m.scoreA) : '', "</div>").concat(m.playerB !== '' ? "<div class=\"".concat(winner === m.playerB ? 'winner' : '', "\">").concat(esc(playerName(m.playerB))).concat(matchStatus(m) ? ' · ' + esc(m.scoreB) : '', "</div>") : '', "</div>"); }).join(''), "</div>"); }).join(''), "</div>").concat(ready && lastMatches.length === 1 && !hasNext ? '<p class="smalltext muted">La categoría ya tiene un ganador.</p>' : '', "</div>"); }
+    function advanceRound(catId) { var c = categoryById(activeT(), catId); if (!c)
+        return; var rounds = __spreadArray([], new Set(c.matches.map(function (m) { return m.round || 'Ronda'; })), true), last = rounds[rounds.length - 1], ms = c.matches.filter(function (m) { return (m.round || 'Ronda') === last; }); if (!ms.length || !ms.every(matchStatus)) {
+        notify('Completa todos los partidos de esta ronda antes de avanzar.');
+        return;
+    } if (ms.length === 1 && ms[0].playerB) {
+        notify('La categoría ya tiene un ganador.');
+        return;
+    } var winners = ms.map(function (m) { if (!m.playerB)
+        return m.playerA; return Number(m.scoreA) > Number(m.scoreB) ? m.playerA : Number(m.scoreB) > Number(m.scoreA) ? m.playerB : null; }).filter(Boolean); if (winners.length <= 1) {
+        notify('El cuadro ya ha terminado.');
+        return;
+    } var n = rounds.length + 1, label = winners.length === 2 ? 'Final' : winners.length === 4 ? 'Semifinales' : winners.length === 8 ? 'Cuartos de final' : 'Ronda ' + n; for (var i = 0; i < winners.length; i += 2) {
+        if (winners[i + 1])
+            c.matches.push({ id: uid(), playerA: winners[i], playerB: winners[i + 1], round: label, date: '', time: '', court: '', scoreA: '', scoreB: '', status: 'pending' });
+        else
+            c.matches.push({ id: uid(), playerA: winners[i], playerB: '', round: label, date: '', time: '', court: '', scoreA: '1', scoreB: '0', status: 'done' });
+    } save(); render(); notify('Siguiente ronda generada.'); }
+    function matchCard(m) { var _a, _b, _c; return "<div class=\"match\" data-match-row=\"".concat(m.id, "\" data-category=\"").concat(m.categoryId, "\" data-status=\"").concat(matchStatus(m) ? 'done' : 'pending', "\" data-names=\"").concat(esc((playerName(m.playerA) + ' ' + playerName(m.playerB) + ' ' + m.categoryName).toLowerCase()), "\"><div class=\"player-side\"><strong>").concat(esc(playerName(m.playerA)), "</strong><div class=\"muted smalltext\">").concat(esc(m.playerA || ''), "</div></div><div class=\"vs\">").concat(matchStatus(m) ? "".concat(esc(m.scoreA), " : ").concat(esc(m.scoreB)) : 'VS', "</div><div class=\"player-side\"><strong>").concat(esc(playerName(m.playerB)), "</strong><div class=\"muted smalltext\">").concat(esc(m.playerB || ''), "</div></div><div class=\"match-meta\"><span class=\"tag\">").concat(esc(m.categoryName), "</span>").concat(m.groupName ? "<span class=\"tag\">".concat(esc(m.groupName), "</span>") : '', "<span class=\"tag\">\u23F1 ").concat(Number(m.duration) || 90, " min</span><label>Fecha <input type=\"date\" data-match-field=\"date\" data-id=\"").concat(m.id, "\" data-cat=\"").concat(m.categoryId, "\" value=\"").concat(esc(m.date || ''), "\"></label><label>Hora <input type=\"time\" data-match-field=\"time\" data-id=\"").concat(m.id, "\" data-cat=\"").concat(m.categoryId, "\" value=\"").concat(esc(m.time || ''), "\"></label><label>Pista <select data-match-field=\"court\" data-id=\"").concat(m.id, "\" data-cat=\"").concat(m.categoryId, "\"><option value=\"\">Sin asignar</option>").concat(Array.from({ length: Math.max(1, Math.min(24, Number((_a = activeT()) === null || _a === void 0 ? void 0 : _a.courts) || 1)) }, function (_, i) { return "<option ".concat(m.court === 'Pista ' + (i + 1) ? 'selected' : '', ">Pista ").concat(i + 1, "</option>"); }).join(''), "</select></label><label>Marcador <input class=\"score-input\" type=\"number\" min=\"0\" max=\"99\" inputmode=\"numeric\" aria-label=\"Juegos ").concat(esc(playerName(m.playerA)), "\" data-match-field=\"scoreA\" data-id=\"").concat(m.id, "\" data-cat=\"").concat(m.categoryId, "\" value=\"").concat((_b = m.scoreA) !== null && _b !== void 0 ? _b : '', "\"> : <input class=\"score-input\" type=\"number\" min=\"0\" max=\"99\" inputmode=\"numeric\" aria-label=\"Juegos ").concat(esc(playerName(m.playerB)), "\" data-match-field=\"scoreB\" data-id=\"").concat(m.id, "\" data-cat=\"").concat(m.categoryId, "\" value=\"").concat((_c = m.scoreB) !== null && _c !== void 0 ? _c : '', "\"></label><span class=\"status ").concat(matchStatus(m) ? 'done' : '', "\">").concat(matchStatus(m) ? 'Terminado' : 'Pendiente', "</span><button class=\"btn small\" data-action=\"save-match\" data-id=\"").concat(m.id, "\" data-cat=\"").concat(m.categoryId, "\">Guardar</button><button class=\"btn danger small\" data-action=\"delete-match\" data-id=\"").concat(m.id, "\" data-cat=\"").concat(m.categoryId, "\">Eliminar</button></div></div>"); }
+    function standingsPage() {
+        var t = activeT();
+        if (!t)
+            return pageHead('Clasificaciones', 'Consulta posiciones y resultados.') + empty('Primero crea un torneo.');
+        return pageHead('Clasificaciones', 'Clasificaciones automáticas por grupo y resultados de liga.') + "<div class=\"stack\">".concat(t.categories.map(function (c) {
+            var _a;
+            if (c.format === 'groups_knockout' && ((_a = c.groups) === null || _a === void 0 ? void 0 : _a.length)) {
+                return "<div class=\"card\"><div class=\"row between\"><h3>".concat(esc(c.name), "</h3><span class=\"tag\">Grupos + eliminatoria</span></div>").concat(c.groups.map(function (g) { var stats = groupStats(c, g); return "<h4>".concat(esc(g.name), " <span class=\"tag\">").concat(g.playerIds.length, " jugadores</span></h4><div class=\"table-wrap\"><table><thead><tr><th>#</th><th>Jugador</th><th>PJ</th><th>G</th><th>P</th><th>Juegos +</th><th>Juegos \u2212</th><th>Puntos</th></tr></thead><tbody>").concat(stats.map(function (x, i) { return "<tr><td>".concat(i + 1, "</td><td>").concat(esc(x.name)).concat(i < 2 ? ' <span class="tag">Clasifica</span>' : '', "</td><td>").concat(x.pj, "</td><td>").concat(x.g, "</td><td>").concat(x.p, "</td><td>").concat(x.f, "</td><td>").concat(x.contra, "</td><td><b>").concat(x.pts, "</b></td></tr>"); }).join(''), "</tbody></table></div>"); }).join('')).concat(c.groups.every(function (g) { return g.matches.every(matchStatus); }) && !c.matches.some(function (m) { return m.stage === 'knockout'; }) ? "<p><button class=\"btn\" data-action=\"generate-knockout\" data-cat=\"".concat(c.id, "\">Crear cuadro eliminatorio con los 2 primeros de cada grupo</button></p>") : '').concat(c.matches.some(function (m) { return m.stage === 'knockout'; }) ? bracketView(c) : '', "</div>");
+            }
+            var stats = c.playerIds.map(function (id) { return ({ id: id, name: playerName(id), pj: 0, g: 0, p: 0, f: 0, contra: 0, pts: 0 }); }), byId = Object.fromEntries(stats.map(function (x) { return [x.id, x]; }));
+            c.matches.filter(function (m) { return m.stage !== 'knockout' && matchStatus(m); }).forEach(function (m) { var a = byId[m.playerA], b = byId[m.playerB]; if (!a || !b)
+                return; a.pj++; b.pj++; a.f += Number(m.scoreA); a.contra += Number(m.scoreB); b.f += Number(m.scoreB); b.contra += Number(m.scoreA); if (Number(m.scoreA) > Number(m.scoreB)) {
+                a.g++;
+                b.p++;
+                a.pts += c.format === 'league' ? 2 : 0;
+            }
+            else if (Number(m.scoreB) > Number(m.scoreA)) {
+                b.g++;
+                a.p++;
+                b.pts += c.format === 'league' ? 2 : 0;
+            } });
+            stats.sort(function (a, b) { return b.pts - a.pts || b.g - a.g || (b.f - b.contra) - (a.f - a.contra) || a.name.localeCompare(b.name); });
+            return "<div class=\"card\"><div class=\"row between\"><h3>".concat(esc(c.name), "</h3><span class=\"tag\">").concat(c.format === 'league' ? 'Liga' : c.format === 'knockout' ? 'Eliminatoria' : 'Competición', "</span></div>").concat(stats.length ? "<div class=\"table-wrap\"><table><thead><tr><th>#</th><th>Jugador</th><th>PJ</th><th>G</th><th>P</th><th>Juegos +</th><th>Juegos \u2212</th><th>Puntos</th></tr></thead><tbody>".concat(stats.map(function (x, i) { return "<tr><td>".concat(i + 1, "</td><td>").concat(esc(x.name), "</td><td>").concat(x.pj, "</td><td>").concat(x.g, "</td><td>").concat(x.p, "</td><td>").concat(x.f, "</td><td>").concat(x.contra, "</td><td><b>").concat(x.pts, "</b></td></tr>"); }).join(''), "</tbody></table></div>") : empty('No hay jugadores inscritos en esta categoría.'), "</div>");
+        }).join('') || empty('Crea una categoría para generar clasificaciones.'), "</div>");
+    }
+    function backupPage() { return pageHead('Copias de seguridad', 'Exporta tus datos antes de cambiar de dispositivo o borrar los datos del navegador.') + "<div class=\"grid\"><div class=\"card\"><h3>\uD83D\uDCE5 Exportar copia</h3><p>Guarda torneos, categor\u00EDas, jugadores, partidos y resultados en un archivo JSON.</p><button class=\"btn\" data-action=\"export-backup\">Descargar copia de seguridad</button></div><div class=\"card\"><h3>\uD83D\uDCE4 Importar copia</h3><p>Recupera una copia exportada previamente. Puedes reemplazar todos los datos actuales.</p><button class=\"btn secondary\" data-action=\"import-backup\">Seleccionar archivo JSON</button></div><div class=\"card\"><h3>\uD83D\uDCC4 Exportar jugadores</h3><p>Descarga el directorio de jugadores en formato CSV para abrirlo con Excel.</p><button class=\"btn secondary\" data-action=\"export-csv\">Descargar jugadores CSV</button></div></div><div class=\"notice\" style=\"margin-top:14px\"><strong>Importante:</strong> los datos se guardan en el navegador de este dispositivo. No borres los datos del sitio ni desinstales el navegador sin exportar antes una copia. La aplicaci\u00F3n no sincroniza autom\u00E1ticamente con otros dispositivos.</div><div class=\"card\" style=\"margin-top:14px\"><h3>Estado de los datos</h3><p>Jugadores: <strong>".concat(state.players.length, "</strong> \u00B7 Torneos: <strong>").concat(state.tournaments.length, "</strong> \u00B7 Partidos: <strong>").concat(allMatches({ categories: state.tournaments.flatMap(function (t) { return t.categories; }) }).length, "</strong></p><p class=\"backup-note\">Recomendaci\u00F3n: exporta una copia al finalizar cada jornada y guarda el archivo en una ubicaci\u00F3n que puedas encontrar f\u00E1cilmente.</p><button class=\"btn danger\" data-action=\"clear-all\">Borrar todos los datos</button></div>"); }
+    function openModal(title, body, onSubmit, submit) {
+        if (submit === void 0) { submit = 'Guardar'; }
+        var d = $('#modal');
+        $('#modalTitle').textContent = title;
+        $('#modalBody').innerHTML = body;
+        $('#modalSave').textContent = submit;
+        d._submit = onSubmit;
+        d.showModal();
+    }
+    function closeModal() { $('#modal').close(); }
+    function field(label, name, value, type, required, extra) {
+        if (value === void 0) { value = ''; }
+        if (type === void 0) { type = 'text'; }
+        if (required === void 0) { required = false; }
+        if (extra === void 0) { extra = ''; }
+        return "<div class=\"field\"><label for=\"f_".concat(name, "\">").concat(label, "</label><input id=\"f_").concat(name, "\" name=\"").concat(name, "\" type=\"").concat(type, "\" value=\"").concat(esc(value), "\" ").concat(required ? 'required' : '', " ").concat(extra, "></div>");
+    }
+    function newTournament(id) { var t = state.tournaments.find(function (x) { return x.id === id; }) || { name: '', startDate: today(), endDate: '', location: 'Polideportivo Municipal de Guardamar', courts: 4, notes: '' }; openModal(id ? 'Editar torneo' : 'Nuevo torneo', "<div class=\"form-grid\">".concat(field('Nombre del torneo', 'name', t.name, 'text', true)).concat(field('Número de pistas', 'courts', t.courts, 'number', true, 'min="1" max="24"')).concat(field('Fecha de inicio', 'startDate', t.startDate, 'date')).concat(field('Fecha de fin', 'endDate', t.endDate, 'date')).concat(field('Lugar', 'location', t.location, 'text', false, 'class="full"')).concat(field('Notas', 'notes', t.notes, 'text', false, 'class="full"'), "</div>"), function (fd) { var name = fd.get('name').trim(); if (!name)
+        throw Error('Escribe el nombre del torneo.'); var obj = __assign(__assign({}, t), { id: t.id || uid(), name: name, startDate: fd.get('startDate'), endDate: fd.get('endDate'), location: fd.get('location'), courts: Math.max(1, Math.min(24, Number(fd.get('courts')) || 1)), notes: fd.get('notes'), categories: t.categories || [] }); if (id) {
+        state.tournaments = state.tournaments.map(function (x) { return x.id === id ? obj : x; });
+    }
+    else {
+        state.tournaments.push(obj);
+        state.activeTournament = obj.id;
+    } save(); closeModal(); render(); notify('Torneo guardado.'); }); }
+    function assignPairCategories() {
+        var t = activeT();
+        if (!t) {
+            notify('Primero abre el Torneo de Navidad 2026.');
+            return;
+        }
+        var choices = ['Élite', 'Primera', 'Segunda', 'Tercera', '1°Femenina', '2° Femenina', '1°Juvenil', '2° Juvenil', 'Tercera Juvenil'];
+        var rows = state.players.map(function (p, i) { return "<div class=\"field\"><label>".concat(i + 1, ". ").concat(esc(p.name), "</label><select name=\"cat_").concat(p.id, "\"><option value=\"\">\u2014 Seleccionar categor\u00EDa \u2014</option>").concat(choices.map(function (c) { return "<option value=\"".concat(c, "\" ").concat(p.category === c ? 'selected' : '', ">").concat(c, "</option>"); }).join(''), "</select></div>"); }).join('');
+        openModal('Asignar parejas por categoría', "<div class=\"stack\"><p class=\"smalltext muted\">Selecciona la categor\u00EDa correspondiente a cada pareja inscrita. Las parejas permanecer\u00E1n juntas como una sola unidad de competici\u00F3n.</p>".concat(rows, "<div class=\"notice\">Despu\u00E9s de guardar, la aplicaci\u00F3n organizar\u00E1 las parejas en sus categor\u00EDas. Los grupos se generar\u00E1n m\u00E1s adelante, cuando cada categor\u00EDa tenga un n\u00FAmero v\u00E1lido de parejas.</div></div>"), function (fd) {
+            var assigned = {};
+            state.players.forEach(function (p) { var _a; var c = fd.get('cat_' + p.id) || ''; p.category = c; if (c)
+                ((_a = assigned[c]) !== null && _a !== void 0 ? _a : (assigned[c] = [])).push(p.id); });
+            Object.entries(assigned).forEach(function (_a) {
+                var name = _a[0], ids = _a[1];
+                var c = t.categories.find(function (x) { return x.name.toLowerCase() === name.toLowerCase(); });
+                if (!c) {
+                    c = { id: uid(), name: name, format: 'groups_knockout', playerIds: [], seeds: [], matches: [], groups: [], scheduleDate: t.startDate || today(), startTime: '09:00' };
+                    t.categories.push(c);
+                }
+                c.playerIds = ids;
+            });
+            // Keep existing categories with matches even if no pair is currently assigned to them.
+            t.categories = t.categories.filter(function (c) { var _a; return assigned[c.name] || ((_a = c.matches) === null || _a === void 0 ? void 0 : _a.length); });
+            save();
+            closeModal();
+            render();
+            notify('Categorías asignadas y listas para organizar grupos.');
+        }, 'Guardar categorías');
+    }
+    function newPlayer(id) { var p = state.players.find(function (x) { return x.id === id; }) || { name: '', club: '', phone: '', email: '', category: '' }; var playerCategories = ['Élite', 'Primera', 'Segunda', 'Tercera', '1°Femenina', '2° Femenina', '1°Juvenil', '2° Juvenil', 'Tercera Juvenil']; openModal(id ? 'Editar jugador' : 'Nuevo jugador', "<div class=\"form-grid\">".concat(field('Nombre y apellidos', 'name', p.name, 'text', true), "<div class=\"field\"><label>Categor\u00EDa</label><select name=\"category\" required><option value=\"\">\u2014 Selecciona categor\u00EDa \u2014</option>").concat(playerCategories.map(function (c) { return "<option value=\"".concat(c, "\" ").concat(p.category === c ? 'selected' : '', ">").concat(c, "</option>"); }).join(''), "</select></div>").concat(field('Club', 'club', p.club)).concat(field('Teléfono', 'phone', p.phone, 'tel')).concat(field('Correo electrónico', 'email', p.email, 'email')).concat(field('Incompatibilidades horarias', 'availability', p.availability || '', 'text'), "<div class=\"smalltext muted\">Ejemplo: viernes no disponible antes de las 18:00; s\u00E1bado 09:00-12:00 ocupado.</div></div>"), function (fd) { var name = fd.get('name').trim(); if (!name)
+        throw Error('Escribe el nombre del jugador.'); if (!fd.get('category'))
+        throw Error('Selecciona la categoría del jugador.'); if (state.players.some(function (x) { return x.name.toLowerCase() === name.toLowerCase() && x.id !== id; }))
+        throw Error('Ya existe un jugador con ese nombre.'); var obj = __assign(__assign({}, p), { id: p.id || uid(), name: name, category: fd.get('category'), club: fd.get('club'), phone: fd.get('phone'), email: fd.get('email'), availability: fd.get('availability') || '' }); if (id)
+        state.players = state.players.map(function (x) { return x.id === id ? obj : x; });
+    else
+        state.players.push(obj); save(); closeModal(); render(); notify('Jugador guardado.'); }); }
+    function newCategory() { var t = activeT(); if (!t) {
+        notify('Primero crea un torneo.');
+        return;
+    } if (!state.players.length) {
+        notify('Añade primero los jugadores.');
+        newPlayer();
+        return;
+    } var presets = ['Élite', 'Primera', 'Segunda', '1.º Infantil', '2.º Infantil']; openModal('Añadir categoría', "<div class=\"stack\"><div class=\"field\"><label>Categor\u00EDas habituales del club</label><select id=\"categoryPreset\"><option value=\"\">\u2014 Elegir categor\u00EDa \u2014</option>".concat(presets.map(function (n) { return "<option value=\"".concat(n, "\">").concat(n, "</option>"); }).join(''), "<option value=\"__custom\">Otra categor\u00EDa (escribir nombre)</option></select><span class=\"smalltext muted\">Puedes utilizar las categor\u00EDas habituales o escribir una personalizada.</span></div><div class=\"field\"><label>Nombre de la categor\u00EDa</label><input id=\"categoryName\" name=\"name\" required placeholder=\"Ej. Primera masculina\"></div><div class=\"field\"><label>Formato</label><select name=\"format\"><option value=\"groups_knockout\">Liga por grupos (m\u00E1x. 4) + cuadro eliminatorio</option><option value=\"league\">Liga todos contra todos (sin grupos)</option><option value=\"knockout\">Cuadro eliminatorio directo</option></select></div><div class=\"form-grid\"><div class=\"field\"><label>Fecha de inicio</label><input name=\"scheduleDate\" type=\"date\" value=\"").concat(esc(t.startDate || today()), "\"></div><div class=\"field\"><label>Hora del primer partido</label><input name=\"startTime\" type=\"time\" value=\"09:00\"></div></div><div class=\"notice\">La aplicaci\u00F3n crear\u00E1 grupos de 3 o 4 parejas, generar\u00E1 la liga de cada grupo y asignar\u00E1 autom\u00E1ticamente fechas, horas y pistas en bloques de 90 minutos. Despu\u00E9s de la fase de grupos podr\u00E1s crear el cuadro eliminatorio.</div><div class=\"field\"><label>Cabezas de serie (opcional; selecci\u00F3n m\u00FAltiple)</label><select name=\"seeds\" multiple>").concat(state.players.map(function (p) { return "<option value=\"".concat(p.id, "\">").concat(esc(p.name), "</option>"); }).join(''), "</select><span class=\"smalltext muted\">Selecciona aqu\u00ED los cabezas de serie. Se distribuir\u00E1n en grupos distintos cuando sea posible.</span></div><div class=\"field\"><label>Jugadores participantes (puedes elegir varios)</label><select name=\"players\" multiple required>").concat(state.players.map(function (p) { return "<option value=\"".concat(p.id, "\">").concat(esc(p.name)).concat(p.club ? ' · ' + esc(p.club) : '', "</option>"); }).join(''), "</select><span class=\"smalltext muted\">En la tablet, toca los jugadores que quieras incluir. Mant\u00E9n pulsado si el navegador lo requiere.</span></div></div>"), function (fd) { var name = fd.get('name').trim(), ids = __spreadArray([], $('#modalBody select[name="players"]').selectedOptions, true).map(function (o) { return o.value; }); if (!name)
+        throw Error('Elige o escribe el nombre de la categoría.'); if (!ids.length)
+        throw Error('Selecciona al menos un jugador.'); if (t.categories.some(function (c) { return c.name.toLowerCase() === name.toLowerCase(); }))
+        throw Error('Ya existe esa categoría en este torneo.'); var c = { id: uid(), name: name, format: fd.get('format'), playerIds: ids, seeds: __spreadArray([], $('#modalBody select[name="seeds"]').selectedOptions, true).map(function (o) { return o.value; }).filter(function (x) { return ids.includes(x); }), matches: [], scheduleDate: fd.get('scheduleDate') || t.startDate || today(), startTime: fd.get('startTime') || '09:00', groups: [] }; t.categories.push(c); selectedCategory = c.id; save(); closeModal(); render(); notify('Categoría ' + name + ' creada.'); }, 'Crear categoría'); var preset = $('#categoryPreset'), nameInput = $('#categoryName'); preset.addEventListener('change', function () { if (preset.value && preset.value !== '__custom')
+        nameInput.value = preset.value;
+    else if (preset.value === '__custom') {
+        nameInput.value = '';
+        nameInput.focus();
+    } }); }
+    function newMatch() { var t = activeT(); if (!t) {
+        notify('Primero crea un torneo.');
+        return;
+    } if (!t.categories.length) {
+        notify('Crea primero una categoría.');
+        newCategory();
+        return;
+    } var cat = t.categories[0]; openModal('Programar partido', "<div class=\"stack\"><div class=\"field\"><label>Categor\u00EDa</label><select name=\"cat\" id=\"newMatchCat\">".concat(t.categories.map(function (c) { return "<option value=\"".concat(c.id, "\">").concat(esc(c.name), "</option>"); }).join(''), "</select></div><div class=\"field\"><label>Jugador o pareja A</label><select name=\"a\" id=\"newMatchA\" required></select></div><div class=\"field\"><label>Jugador o pareja B</label><select name=\"b\" id=\"newMatchB\" required></select></div><div class=\"form-grid\">").concat(field('Fecha', 'date', today(), 'date')).concat(field('Hora', 'time', '10:00', 'time'), "<div class=\"field\"><label>Pista</label><select name=\"court\"><option value=\"\">Sin asignar</option>").concat(Array.from({ length: Math.max(1, Number(t.courts) || 1) }, function (_, i) { return "<option>Pista ".concat(i + 1, "</option>"); }).join(''), "</select></div>").concat(field('Ronda / jornada', 'round', 'Jornada 1'), "</div></div>"), function (fd) { var c = categoryById(t, fd.get('cat')), a = fd.get('a'), b = fd.get('b'); if (!c || !a || !b || a === b)
+        throw Error('Selecciona dos jugadores distintos.'); c.matches.push({ id: uid(), playerA: a, playerB: b, round: fd.get('round'), date: fd.get('date'), time: fd.get('time'), court: fd.get('court'), scoreA: '', scoreB: '', status: 'pending' }); save(); closeModal(); render(); notify('Partido programado.'); }); var fill = function () { var c = categoryById(t, $('#newMatchCat').value); var opts = ((c === null || c === void 0 ? void 0 : c.playerIds) || []).map(function (id) { return "<option value=\"".concat(id, "\">").concat(esc(playerName(id)), "</option>"); }).join(''); $('#newMatchA').innerHTML = opts; $('#newMatchB').innerHTML = opts; }; $('#newMatchCat').addEventListener('change', fill); fill(); }
+    function scheduleMatches(t, c, matches, startDate, startTime) {
+        var courts = Math.max(1, Math.min(24, Number(t.courts) || 1));
+        var day = startDate || t.startDate || today(), time = startTime || '09:00';
+        var end = t.endDate || day, dates = [];
+        var d = new Date(day + 'T12:00:00'), last = new Date(end + 'T12:00:00');
+        if (last < d)
+            last = d;
+        while (d <= last && dates.length < 366) {
+            dates.push(d.toISOString().slice(0, 10));
+            d.setDate(d.getDate() + 1);
+        }
+        if (!dates.length)
+            dates.push(day);
+        var _a = time.split(':').map(Number), sh = _a[0], sm = _a[1], base = sh * 60 + sm;
+        // Randomized tie-breaks but prioritize seeded players and spread each player's matches.
+        var seedSet = new Set(c.seeds || []);
+        var pending = __spreadArray([], matches, true);
+        var placed = [], slots = [];
+        dates.forEach(function (date) { for (var mins = base; mins + 90 <= 22 * 60; mins += 90)
+            for (var court = 1; court <= courts; court++)
+                slots.push({ date: date, time: String(Math.floor(mins / 60)).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0'), court: 'Pista ' + court, mins: mins }); });
+        var appearances = {};
+        function unavailable(m, slot) {
+            var ids = [m.playerA, m.playerB].filter(Boolean);
+            return ids.some(function (id) {
+                var p = state.players.find(function (x) { return x.id === id; });
+                if (!p || !p.availability)
+                    return false;
+                var a = p.availability.toLowerCase();
+                // Interpret common day/time restrictions; uncertain natural-language rules are flagged for manual review.
+                var dayName = new Date(slot.date + 'T12:00:00').toLocaleDateString('es-ES', { weekday: 'long' }).toLowerCase();
+                if (a.includes(dayName) && (/no disponible|no puede|ocupad|trabaj|incompatible/.test(a)))
+                    return true;
+                var ranges = __spreadArray([], a.matchAll(/(\d{1,2}):(\d{2})\s*[-a]\s*(\d{1,2}):(\d{2})/g), true);
+                if (ranges.some(function (r) { var x = +r[1] * 60 + +r[2], y = +r[3] * 60 + +r[4]; return slot.mins < y && slot.mins + 90 > x; }))
+                    return true;
+                return false;
+            });
+        }
+        function consecutivePenalty(m, slot) {
+            var penalty = 0;
+            [m.playerA, m.playerB].filter(Boolean).forEach(function (id) {
+                var prev = placed.filter(function (x) { return (x.playerA === id || x.playerB === id) && x.date === slot.date; }).sort(function (a, b) { return a.mins - b.mins; });
+                if (prev.length >= 2 && prev.slice(-2).every(function (x) { return x.mins + 90 === slot.mins; }))
+                    penalty += 1000;
+                if (prev.length)
+                    penalty += prev.filter(function (x) { return Math.abs(x.mins - slot.mins) <= 90; }).length * 10;
+            });
+            return penalty;
+        }
+        slots.forEach(function (slot) {
+            if (!pending.length)
+                return;
+            var best = -1, bestScore = Infinity;
+            pending.forEach(function (m, i) {
+                if (unavailable(m, slot))
+                    return;
+                var score = consecutivePenalty(m, slot);
+                [m.playerA, m.playerB].filter(Boolean).forEach(function (id) { if (seedSet.has(id))
+                    score -= 2; if ((appearances[id] || 0) > 0)
+                    score += appearances[id] * 0.2; });
+                score += Math.random() * 0.05;
+                if (score < bestScore) {
+                    best = i;
+                    bestScore = score;
+                }
+            });
+            if (best < 0)
+                return;
+            var m = pending.splice(best, 1)[0];
+            Object.assign(m, { date: slot.date, time: slot.time, court: slot.court, duration: 90 });
+            m.scheduleWarning = bestScore >= 1000 ? 'Revisar: posible tercer partido seguido' : '';
+            placed.push(__assign(__assign({}, m), { mins: slot.mins }));
+            [m.playerA, m.playerB].filter(Boolean).forEach(function (id) { return appearances[id] = (appearances[id] || 0) + 1; });
+        });
+        // If constraints block slots, leave unscheduled rather than silently violating them.
+        pending.forEach(function (m) { m.date = ''; m.time = ''; m.court = ''; m.duration = 90; m.scheduleWarning = 'Sin hueco compatible: revisar restricciones/horarios'; });
+    }
+    function buildGroups(ids, seeds) {
+        var _a;
+        if (seeds === void 0) { seeds = []; }
+        var n = ids.length;
+        if (n < 3 || n === 5)
+            throw Error('No es posible formar grupos de 3 o 4 parejas con ' + n + ' inscritas. Se necesitan 3 o al menos 6.');
+        var shuffled = __spreadArray([], ids, true);
+        for (var i = shuffled.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            _a = [shuffled[j], shuffled[i]], shuffled[i] = _a[0], shuffled[j] = _a[1];
+        }
+        var count = Math.ceil(n / 4), sizes = Array(count).fill(Math.floor(n / count));
+        for (var i = 0; i < n % count; i++)
+            sizes[i]++;
+        var groups = sizes.map(function (size, i) { return ({ id: uid(), name: 'Grupo ' + String.fromCharCode(65 + i), playerIds: [], matches: [], capacity: size }); });
+        var seedList = shuffled.filter(function (id) { return seeds.includes(id); }), rest = shuffled.filter(function (id) { return !seeds.includes(id); });
+        seedList.forEach(function (id, i) { var g = groups.find(function (x) { return x.playerIds.length < x.capacity; }); if (g)
+            g.playerIds.push(id); });
+        rest.forEach(function (id) { var g = groups.find(function (x) { return x.playerIds.length < x.capacity; }); if (g)
+            g.playerIds.push(id); });
+        return groups;
+    }
+    function generateMatches() {
+        var t = activeT();
+        if (!t) {
+            notify('Primero crea un torneo.');
+            return;
+        }
+        var options = t.categories.map(function (c) { return "<option value=\"".concat(c.id, "\">").concat(esc(c.name), "</option>"); }).join('');
+        if (!options) {
+            notify('Crea primero una categoría.');
+            newCategory();
+            return;
+        }
+        openModal('Generar competición y calendario', "<div class=\"stack\"><div class=\"field\"><label>Categor\u00EDa</label><select name=\"cat\">".concat(options, "</select></div><div class=\"field\"><label>Modelo de torneo</label><select name=\"kind\"><option value=\"groups_knockout\">Liga por grupos de 3 o 4 parejas + cuadro eliminatorio</option><option value=\"league\">Liga todos contra todos</option><option value=\"knockout\">Cuadro eliminatorio directo</option></select></div><div class=\"form-grid\"><div class=\"field\"><label>Fecha de inicio</label><input name=\"date\" type=\"date\" value=\"").concat(esc(t.startDate || today()), "\" required></div><div class=\"field\"><label>Hora inicial diaria</label><input name=\"time\" type=\"time\" value=\"09:00\" required></div></div><div class=\"notice\">Antes de generar horarios, registra las incompatibilidades en la ficha de cada jugador. El sistema intentar\u00E1 evitar tres partidos seguidos del mismo jugador y respetar las incompatibilidades indicadas.</div><div class=\"notice\"><b>Autom\u00E1tico:</b> grupos de 3 o 4 parejas, partidos de 90 minutos, reparto entre pistas y programaci\u00F3n consecutiva. Para grupos + eliminatoria se clasificar\u00E1n los 2 primeros de cada grupo.</div></div>"), function (fd) {
+            var _a, _b;
+            var c = categoryById(t, fd.get('cat'));
+            if (!c)
+                throw Error('Categoría no encontrada.');
+            if (c.matches.length)
+                throw Error('Esta categoría ya tiene partidos. Elimina sus partidos antes de generar otro calendario.');
+            var ids = __spreadArray([], c.playerIds, true);
+            if (ids.length < 2)
+                throw Error('Se necesitan al menos dos parejas.');
+            if (fd.get('kind') === 'groups_knockout' && (ids.length < 3 || ids.length === 5))
+                throw Error('Para grupos de 3 o 4 parejas, esta categoría debe tener 3 o al menos 6 parejas. Ahora tiene ' + ids.length + '.');
+            var kind = fd.get('kind'), startDate = fd.get('date') || t.startDate || today(), startTime = fd.get('time') || '09:00';
+            c.format = kind;
+            c.scheduleDate = startDate;
+            c.startTime = startTime;
+            c.groups = [];
+            var generated = [];
+            if (kind === 'groups_knockout') {
+                c.groups = buildGroups(ids, c.seeds || []);
+                c.groups.forEach(function (g) { for (var i = 0; i < g.playerIds.length; i++)
+                    for (var j = i + 1; j < g.playerIds.length; j++) {
+                        var m = { id: uid(), playerA: g.playerIds[i], playerB: g.playerIds[j], round: g.name, groupId: g.id, groupName: g.name, stage: 'groups', scoreA: '', scoreB: '', status: 'pending' };
+                        g.matches.push(m);
+                        generated.push(m);
+                    } });
+                if (!generated.length)
+                    throw Error('No se han podido crear partidos para los grupos.');
+            }
+            else if (kind === 'league') {
+                for (var i = 0; i < ids.length; i++)
+                    for (var j = i + 1; j < ids.length; j++)
+                        generated.push({ id: uid(), playerA: ids[i], playerB: ids[j], round: 'Liga', stage: 'league', scoreA: '', scoreB: '', status: 'pending' });
+            }
+            else {
+                var shuffled = __spreadArray([], ids, true);
+                for (var i = shuffled.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    _a = [shuffled[j], shuffled[i]], shuffled[i] = _a[0], shuffled[j] = _a[1];
+                }
+                for (var i = 0; i < shuffled.length; i += 2) {
+                    if (shuffled[i + 1])
+                        generated.push({ id: uid(), playerA: shuffled[i], playerB: shuffled[i + 1], round: 'Primera ronda', stage: 'knockout', scoreA: '', scoreB: '', status: 'pending' });
+                    else
+                        generated.push({ id: uid(), playerA: shuffled[i], playerB: '', round: 'Primera ronda', stage: 'knockout', scoreA: '1', scoreB: '0', status: 'done' });
+                }
+            }
+            scheduleMatches(t, c, generated, startDate, startTime);
+            (_b = c.matches).push.apply(_b, generated);
+            selectedCategory = c.id;
+            save();
+            closeModal();
+            render();
+            notify('Calendario creado: partidos de 90 minutos y pistas asignadas automáticamente.');
+        }, 'Generar calendario');
+    }
+    function groupStats(c, g) { var stats = g.playerIds.map(function (id) { return ({ id: id, name: playerName(id), pj: 0, g: 0, p: 0, f: 0, contra: 0, pts: 0 }); }), by = Object.fromEntries(stats.map(function (x) { return [x.id, x]; })); (g.matches || []).filter(matchStatus).forEach(function (m) { var a = by[m.playerA], b = by[m.playerB]; if (!a || !b)
+        return; a.pj++; b.pj++; a.f += Number(m.scoreA); a.contra += Number(m.scoreB); b.f += Number(m.scoreB); b.contra += Number(m.scoreA); if (Number(m.scoreA) > Number(m.scoreB)) {
+        a.g++;
+        b.p++;
+        a.pts += 2;
+    }
+    else if (Number(m.scoreB) > Number(m.scoreA)) {
+        b.g++;
+        a.p++;
+        b.pts += 2;
+    } }); return stats.sort(function (a, b) { return b.pts - a.pts || b.g - a.g || (b.f - b.contra) - (a.f - a.contra) || a.name.localeCompare(b.name); }); }
+    function generateKnockout(catId) {
+        var _a, _b;
+        var _c;
+        var t = activeT(), c = categoryById(t, catId);
+        if (!c || c.format !== 'groups_knockout')
+            return;
+        if (c.matches.some(function (m) { return m.stage === 'knockout'; })) {
+            notify('El cuadro eliminatorio ya está creado.');
+            return;
+        }
+        if (!((_c = c.groups) === null || _c === void 0 ? void 0 : _c.length)) {
+            notify('No hay grupos creados.');
+            return;
+        }
+        if (c.groups.some(function (g) { return (g.matches || []).some(function (m) { return !matchStatus(m); }); })) {
+            notify('Completa todos los partidos de todos los grupos antes de crear el cuadro.');
+            return;
+        }
+        var qualifiers = c.groups.map(function (g) { return groupStats(c, g).slice(0, 2); }).flat().map(function (x) { return x.id; });
+        if (qualifiers.length < 2)
+            throw new Error('Se necesitan al menos dos clasificados.');
+        var shuffled = __spreadArray([], qualifiers, true);
+        for (var i = shuffled.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            _a = [shuffled[j], shuffled[i]], shuffled[i] = _a[0], shuffled[j] = _a[1];
+        }
+        var label = 'Cuadro eliminatorio · primera ronda', ms = [];
+        for (var i = 0; i < shuffled.length; i += 2) {
+            if (shuffled[i + 1])
+                ms.push({ id: uid(), playerA: shuffled[i], playerB: shuffled[i + 1], round: label, stage: 'knockout', scoreA: '', scoreB: '', status: 'pending' });
+            else
+                ms.push({ id: uid(), playerA: shuffled[i], playerB: '', round: label, stage: 'knockout', scoreA: '1', scoreB: '0', status: 'done' });
+        }
+        scheduleMatches(t, c, ms, c.scheduleDate || t.startDate || today(), c.startTime || '09:00');
+        (_b = c.matches).push.apply(_b, ms);
+        save();
+        render();
+        notify('Cuadro eliminatorio creado con los clasificados.');
+    }
+    function saveMatch(id, catId) { var t = activeT(), c = categoryById(t, catId), m = c === null || c === void 0 ? void 0 : c.matches.find(function (x) { return x.id === id; }); if (!m)
+        return; var els = __spreadArray([], document.querySelectorAll("[data-id=\"".concat(id, "\"][data-cat=\"").concat(catId, "\"][data-match-field]")), true); els.forEach(function (el) { return m[el.dataset.matchField] = el.value; }); if (m.scoreA !== '' && m.scoreB !== '' && m.playerB)
+        m.status = 'done';
+    else
+        m.status = 'pending'; save(); render(); notify('Partido actualizado.'); }
+    function deleteMatch(id, catId) { var c = categoryById(activeT(), catId); if (c && confirm('¿Eliminar este partido?')) {
+        c.matches = c.matches.filter(function (m) { return m.id !== id; });
+        save();
+        render();
+        notify('Partido eliminado.');
+    } }
+    function exportBackup() { var blob = new Blob([JSON.stringify(__assign(__assign({}, state), { exportedAt: new Date().toISOString() }), null, 2)], { type: 'application/json' }); download(blob, 'CT-Guardamar-copia-' + today() + '.json'); notify('Copia de seguridad descargada.'); }
+    function download(blob, name) { if (window.AndroidBridge && typeof window.AndroidBridge.saveFile === 'function') {
+        var reader_1 = new FileReader();
+        reader_1.onload = function () { return window.AndroidBridge.saveFile(name, String(reader_1.result), blob.type || 'application/octet-stream'); };
+        reader_1.readAsDataURL(blob);
+        return;
+    } var a = document.createElement('a'), url = URL.createObjectURL(blob); a.href = url; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(function () { return URL.revokeObjectURL(url); }, 1500); }
+    function exportCSV() { var rows = __spreadArray([['Nombre', 'Categoría', 'Club', 'Teléfono', 'Correo']], state.players.map(function (p) { return [p.name, p.category || '', p.club || '', p.phone || '', p.email || '']; }), true); var csv = '\ufeff' + rows.map(function (r) { return r.map(function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(';'); }).join('\r\n'); download(new Blob([csv], { type: 'text/csv;charset=utf-8' }), 'CT-Guardamar-jugadores-' + today() + '.csv'); }
+    function importBackup(file) { var r = new FileReader(); r.onload = function () { var _a; try {
+        var d = JSON.parse(r.result);
+        if (!d || !Array.isArray(d.players) || !Array.isArray(d.tournaments))
+            throw Error('Formato incorrecto: se necesitan las listas de jugadores y torneos.');
+        var tournaments = d.tournaments.map(function (t) { return (__assign(__assign({}, t), { categories: Array.isArray(t.categories) ? t.categories : [] })); });
+        if (!confirm('La importación reemplazará todos los datos actuales. ¿Has guardado una copia de los datos actuales?'))
+            return;
+        state = { version: 1, players: d.players.map(function (p) { return (__assign(__assign({}, p), { category: p.category || '', availability: p.availability || '' })); }), tournaments: tournaments, activeTournament: d.activeTournament || ((_a = tournaments[0]) === null || _a === void 0 ? void 0 : _a.id) || null };
+        save();
+        render();
+        notify('Copia importada correctamente: ' + state.players.length + ' jugadores y ' + state.tournaments.length + ' torneos.');
+    }
+    catch (e) {
+        notify('No se pudo importar: ' + e.message);
+    } }; r.readAsText(file); }
+    function bindMain() { var s = $('#activeTSelect'); if (s)
+        s.addEventListener('change', function () { setActive(s.value); render(); }); var ps = $('#playerSearch'); if (ps)
+        ps.addEventListener('input', function (e) { search = e.target.value; var pos = e.target.selectionStart; render(); var n = $('#playerSearch'); n.focus(); n.setSelectionRange(pos, pos); }); var cf = $('#categoryFilter'); if (cf)
+        cf.addEventListener('change', filterMatches); var sf = $('#matchStatusFilter'); if (sf)
+        sf.addEventListener('change', filterMatches); var ms = $('#matchSearch'); if (ms)
+        ms.addEventListener('input', filterMatches); var cd = $('#calendarDate'); if (cd)
+        cd.addEventListener('change', filterCalendar); var cc = $('#calendarCourt'); if (cc)
+        cc.addEventListener('change', filterCalendar); }
+    function filterMatches() { var _a, _b, _c; var cat = ((_a = $('#categoryFilter')) === null || _a === void 0 ? void 0 : _a.value) || 'all', st = ((_b = $('#matchStatusFilter')) === null || _b === void 0 ? void 0 : _b.value) || 'all', q = (((_c = $('#matchSearch')) === null || _c === void 0 ? void 0 : _c.value) || '').toLowerCase(); document.querySelectorAll('[data-match-row]').forEach(function (el) { el.classList.toggle('hidden', !((cat === 'all' || el.dataset.category === cat) && (st === 'all' || el.dataset.status === st) && el.dataset.names.includes(q))); }); }
+    function filterCalendar() { var _a, _b; var date = ((_a = $('#calendarDate')) === null || _a === void 0 ? void 0 : _a.value) || '', court = ((_b = $('#calendarCourt')) === null || _b === void 0 ? void 0 : _b.value) || ''; document.querySelectorAll('[data-match-row]').forEach(function (el) { var _a; var m = (_a = activeT()) === null || _a === void 0 ? void 0 : _a.categories.flatMap(function (c) { return c.matches; }).find(function (m) { return m.id === el.dataset.matchRow; }); el.classList.toggle('hidden', !m || !!(date && m.date !== date) || !!(court && m.court !== court)); }); }
+    function loadChristmasDemo() {
+        if (!confirm('Se añadirá un torneo de prueba con 30 parejas de la fotografía. No se borrarán los datos existentes. ¿Continuar?'))
+            return;
+        var tournamentId = uid();
+        var t = { id: tournamentId, name: 'Torneo Estrellas de Navidad 2026 · SIMULACIÓN', startDate: '2026-12-18', endDate: '2026-12-20', location: 'Polideportivo Municipal de Guardamar', courts: 4, notes: 'Simulación con nombres de la fotografía. Parejas tratadas como unidades de competición; grupos sorteados de nuevo.', categories: [] };
+        var definitions = [
+            { name: 'Primera', pairs: [['Roberto Sanz', 'Joaquín García'], ['Sasha Ivanchenko', 'Andre Kosak'], ['Sara Villar', 'Valeria Foschai'], ['Daniil Nekhoroshev', 'Manuel Largo'], ['Dmitry Nagorniy', 'Sv ajunas Navagruckas'.replace('Sv ajunas', 'Svajunas')]] },
+            { name: 'Segunda', pairs: [['Mykyta Klymchuk', 'Héctor Follana'], ['Alexey Dvoretsky', 'Dmitry Frolov'], ['Volodymyr Husiev', 'Aleksandr Bandin'], ['Vicente Hijón', 'Francisco Ferrández']] },
+            { name: 'Tercera', pairs: [['Liudmyla Anisimova', 'Irina Kosak'], ['Elena Bazarova', 'Elena Popova'], ['Arsenii Nikonov', 'Nikita Nikonov'], ['Renata Aurhanova', 'Oleg Bureac'], ['Vladyslav Karpenko', 'Halyna Mukan'], ['Olga Ilina', 'Taisia Makmak'], ['Juan Carlos Agulló', 'Irina Bila'], ['Alex Staravoytau', 'Mikhail Boev']] },
+            { name: '1.ª Niños', pairs: [['Sofia Bonmatí', 'Olivia Pina'], ['Artem Biyj', 'Tymo Lejchter'], ['Oleksandra Znova', 'Kristina Bila'], ['Daniela Piedecausa', 'Tomás Miori'], ['Viktoriia Patsiura', 'Alisa Tovchyhrechko'], ['Carla Albert', 'Carlota Pina'], ['Antonio Palomar', 'Víctor Villaplana']] },
+            { name: '2.ª Niños', pairs: [['Daniil Kolesnyk', 'Alisa Kolesnyk'], ['Vega Andrés', 'Wuei Chen'], ['Carmen Sanguino', 'Elisabeth Toboso'], ['Kristyna Klymchuk', 'Antonina Lejchter'], ['Chloe Bintiuc', 'Clara Valero'], ['Edahi Aldeguer', 'Ailin Nuraliyeva']] }
+        ];
+        var pairIds = [];
+        definitions.forEach(function (def) {
+            var _a;
+            var c = { id: uid(), name: def.name, format: 'groups_knockout', playerIds: [], matches: [], groups: [], scheduleDate: '2026-12-18', startTime: '16:00' };
+            def.pairs.forEach(function (pair) { var id = uid(); state.players.push({ id: id, name: pair.join(' / '), club: 'Pareja de dobles', phone: '', email: '', isPair: true, members: pair }); c.playerIds.push(id); pairIds.push(id); });
+            var ids = __spreadArray([], c.playerIds, true);
+            for (var i = ids.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                _a = [ids[j], ids[i]], ids[i] = _a[0], ids[j] = _a[1];
+            }
+            var n = Math.ceil(ids.length / 4);
+            c.groups = Array.from({ length: n }, function (_, i) { return ({ id: uid(), name: 'Grupo ' + String.fromCharCode(65 + i), playerIds: [], matches: [] }); });
+            ids.forEach(function (id, i) { return c.groups[i % n].playerIds.push(id); });
+            c.groups.forEach(function (g) { for (var i = 0; i < g.playerIds.length; i++)
+                for (var j = i + 1; j < g.playerIds.length; j++) {
+                    var m = { id: uid(), playerA: g.playerIds[i], playerB: g.playerIds[j], round: g.name, groupId: g.id, groupName: g.name, stage: 'groups', scoreA: '', scoreB: '', status: 'pending', duration: 90 };
+                    g.matches.push(m);
+                    c.matches.push(m);
+                } });
+            t.categories.push(c);
+        });
+        // Turnos definidos por el organizador: 12 encuentros el viernes y 25 el sábado.
+        var slots = [];
+        var add = function (date, start, courts) { var _a = start.split(':').map(Number), h = _a[0], m = _a[1]; for (var i = 0; i < courts; i++) {
+            var mins = h * 60 + m + i * 90;
+            slots.push({ date: date, time: String(Math.floor(mins / 60)).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0'), court: 'Pista ' + (i + 1) });
+        } };
+        ['16:00', '17:30', '19:00'].forEach(function (tm) { return add('2026-12-18', tm, 4); });
+        add('2026-12-19', '09:00', 2);
+        add('2026-12-19', '10:30', 3);
+        ['12:00', '13:30', '15:00', '16:30', '18:00'].forEach(function (tm) { return add('2026-12-19', tm, 4); });
+        var matches = t.categories.flatMap(function (c) { return c.matches; });
+        matches.forEach(function (m, i) { var sl = slots[i]; if (sl) {
+            m.date = sl.date;
+            m.time = sl.time;
+            m.court = sl.court;
+        }
+        else {
+            m.date = '';
+            m.time = '';
+            m.court = 'SIN HORARIO: revisar disponibilidad';
+        } });
+        state.tournaments.push(t);
+        state.activeTournament = tournamentId;
+        save();
+        page = 'dashboard';
+        render();
+        notify('Simulación creada: 30 parejas, grupos sorteados y ' + matches.length + ' partidos de liga.');
+    }
+    function handleAction(b) { var _a; var a = b.dataset.action, id = b.dataset.id, cat = b.dataset.cat; switch (a) {
+        case 'load-christmas-demo':
+            loadChristmasDemo();
+            break;
+        case 'new-tournament':
+            newTournament();
+            break;
+        case 'edit-tournament':
+            newTournament(id);
+            break;
+        case 'activate-tournament':
+            setActive(id);
+            render();
+            break;
+        case 'delete-tournament':
+            if (confirm('¿Eliminar el torneo y todas sus categorías y partidos?')) {
+                state.tournaments = state.tournaments.filter(function (t) { return t.id !== id; });
+                if (state.activeTournament === id)
+                    state.activeTournament = ((_a = state.tournaments[0]) === null || _a === void 0 ? void 0 : _a.id) || null;
+                save();
+                render();
+                notify('Torneo eliminado.');
+            }
+            break;
+        case 'new-player':
+            newPlayer();
+            break;
+        case 'assign-pair-categories':
+            assignPairCategories();
+            break;
+        case 'edit-player':
+            newPlayer(id);
+            break;
+        case 'delete-player':
+            if (confirm('¿Eliminar este jugador del directorio? Los partidos anteriores pueden quedar asociados a un jugador pendiente.')) {
+                state.players = state.players.filter(function (p) { return p.id !== id; });
+                state.tournaments.forEach(function (t) { return t.categories.forEach(function (c) { return c.playerIds = c.playerIds.filter(function (x) { return x !== id; }); }); });
+                save();
+                render();
+                notify('Jugador eliminado.');
+            }
+            break;
+        case 'new-category':
+            newCategory();
+            break;
+        case 'new-match':
+            newMatch();
+            break;
+        case 'generate-matches':
+            generateMatches();
+            break;
+        case 'generate-knockout':
+            generateKnockout(cat);
+            break;
+        case 'advance-round':
+            advanceRound(cat);
+            break;
+        case 'save-match':
+            saveMatch(id, cat);
+            break;
+        case 'delete-match':
+            deleteMatch(id, cat);
+            break;
+        case 'export-backup':
+            exportBackup();
+            break;
+        case 'import-backup':
+            $('#importFile').click();
+            break;
+        case 'export-csv':
+            exportCSV();
+            break;
+        case 'clear-all':
+            if (confirm('ATENCIÓN: se borrarán todos los torneos, jugadores y resultados de este navegador. ¿Continuar?') && confirm('Última confirmación: ¿has exportado una copia de seguridad?')) {
+                state = fresh();
+                save();
+                render();
+                notify('Datos borrados.');
+            }
+            break;
+    } }
+    document.addEventListener('click', function (e) { var navb = e.target.closest('[data-page]'); if (navb) {
+        nav(navb.dataset.page);
+        return;
+    } var b = e.target.closest('[data-action]'); if (b) {
+        handleAction(b);
+        return;
+    } });
+    $('#quickNew').addEventListener('click', function () { return newTournament(); });
+    $('#headerBackup').addEventListener('click', function () { return nav('backup'); });
+    $('#modalX').addEventListener('click', closeModal);
+    $('#modalCancel').addEventListener('click', closeModal);
+    $('#modal').addEventListener('click', function (e) { if (e.target === $('#modal'))
+        closeModal(); });
+    $('#modalForm').addEventListener('submit', function (e) { e.preventDefault(); try {
+        $('#modal')._submit(new FormData(e.currentTarget));
+    }
+    catch (err) {
+        notify(err.message || 'Revisa los datos introducidos.');
+    } });
+    $('#importFile').addEventListener('change', function (e) { var f = e.target.files[0]; if (f)
+        importBackup(f); e.target.value = ''; });
+    // Make calendar creation discoverable on its own page.
+    var oldRender = render;
+    render = function () { oldRender(); if (page === 'calendar' || page === 'matches') {
+        var h = $('.page-title');
+        if (h && !$('#generateMatchesBtn')) {
+            var b = document.createElement('button');
+            b.className = 'btn secondary';
+            b.id = 'generateMatchesBtn';
+            b.textContent = '⚙ Generar partidos';
+            b.dataset.action = 'generate-matches';
+            h.append(b);
+        }
+    } };
+    render();
 })();
+
 </script></body></html>

@@ -1,5 +1,30 @@
-GESTOR CT GUARDAMAR – PROYECTO DE DIAGNÓSTICO
+GESTOR CT GUARDAMAR – CORRECCIÓN DE INICIO Y COMPATIBILIDAD
 
-Esta versión muestra un aviso rojo con el error y la línea si JavaScript falla. Sirve para localizar el origen de la pantalla en blanco; no es todavía una confirmación de que el problema esté corregido.
+Esta versión corrige dos problemas que podían dejar la pantalla central en blanco:
+1. Un cierre prematuro de la etiqueta <script> dejaba el código principal fuera de JavaScript.
+2. El código usaba sintaxis y métodos modernos que no existen en WebView antiguos.
 
-Sube el contenido del ZIP al repositorio CT-Guardamar y ejecuta el workflow Build APK. Instala el APK generado. Si aparece el aviso rojo, envía una fotografía legible. Si no aparece, indica si el panel central se muestra y si los menús responden.
+CAMBIOS
+- Se deja todo el código ejecutable dentro de un único bloque JavaScript.
+- Se transpila el programa a JavaScript ES5 para mejorar la compatibilidad con WebView antiguos.
+- Se incorporan compatibilidades para flat, flatMap, fromEntries, matchAll y padStart.
+- Se mantiene el aviso visible de errores de inicio.
+- Se mantiene la copia precargada del Torneo de Navidad 2026 con sus nueve parejas inscritas.
+- Se incrementa la versión Android a 1.1 (versionCode 2).
+- Se conserva la misma aplicación (mismo applicationId) para permitir actualizarla sin desinstalar.
+
+CÓMO GENERAR LA APK EN GITHUB
+1. Descomprime este ZIP en el ordenador.
+2. Abre el repositorio CT-Guardamar en GitHub.
+3. Sustituye los archivos del repositorio por los de esta carpeta. IMPORTANTE: las carpetas app y .github deben quedar directamente en la raíz del repositorio; no metas todo dentro de una carpeta adicional.
+4. Guarda los cambios en la rama main.
+5. Entra en Actions y abre la ejecución más reciente de “Build CT Guardamar APK”.
+6. Cuando termine en verde (Success), descarga el artefacto “CT-Guardamar-APK”.
+7. Extrae el ZIP del artefacto y copia app-debug.apk a la tablet.
+8. Pulsa la APK descargada y elige INSTALAR para actualizar la aplicación existente.
+
+IMPORTANTE
+- No desinstales la versión instalada: actualizar encima conserva los datos de la aplicación.
+- No borres los datos ni el almacenamiento de CT Guardamar Torneos.
+- Si Android dice “Aplicación no instalada” o advierte que el paquete no es compatible, no desinstales nada: envía una foto del mensaje.
+- Después de actualizar, abre el icono CT Guardamar Torneos desde la lista de aplicaciones, no desde el archivo APK.
